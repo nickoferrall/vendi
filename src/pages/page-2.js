@@ -11,7 +11,7 @@ const SecondPage = ({ location }) => {
       <SEO title="Page two" />
       <h1>Hi from the second page</h1>
       <p>Welcome to page 2</p>
-      {/* {location.state.testing} */}
+      {location.state.testing}
       <Link to="/">Go back to the homepage</Link>
     </Layout >
   )
