@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 import { HostelDataContext } from '../../gatsby-browser'
 
-const SecondPage = ({ location }) => {
+const SecondPage = () => {
   const { testing } = useContext(HostelDataContext)
   console.log("testing..", testing)
   return (
@@ -14,7 +14,6 @@ const SecondPage = ({ location }) => {
       <SEO title="Page two" />
       <h1>Hi from the second page</h1>
       <p>Welcome to page 2</p>
-      {location.state.testing}
       <Link to="/">Go back to the {testing}</Link>
     </Layout >
   )
