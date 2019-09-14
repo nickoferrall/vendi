@@ -10,7 +10,10 @@ const ForSale = () => {
     return (
         <>
             <Nav />
-            <ClickedForSaleHostel hostelData={clickedHostelData} />
+            {clickedHostelData ?
+                <ClickedForSaleHostel hostelData={clickedHostelData} />
+                : null
+            }
         </>
     );
 };
