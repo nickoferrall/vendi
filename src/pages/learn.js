@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import Filter from '../components/Filter'
 import FilteredContainer from '../pageComponents/faq/filtered'
 import Header from '../components/Header'
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Questions from '../pageComponents/faq/Questions'
 import SEO from "../components/seo"
 import UnfilteredContainer from '../pageComponents/faq/unfiltered'
