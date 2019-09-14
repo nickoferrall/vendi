@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import ClickedForSaleHostel from '../pageComponents/clickedForSaleHostel'
 import Nav from '../components/Nav'

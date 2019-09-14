@@ -5,10 +5,9 @@ import { HostelDataContext } from '../../context/HostelDataContext'
 import Header from '../../components/Header'
 import PanelDisplay from './PanelDisplay'
 
-import styles from './ClickedForSaleHostelStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
-const ClickedForSaleHostel = ({ hostelData, classes }) => {
+const ClickedForSaleHostel = () => {
     const { clickedHostelData } = useContext(HostelDataContext)
     return (
         <>
@@ -18,4 +17,4 @@ const ClickedForSaleHostel = ({ hostelData, classes }) => {
     )
 }
 
-export default withStyles(styles)(ClickedForSaleHostel)
+export default ClickedForSaleHostel
