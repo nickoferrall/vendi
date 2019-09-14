@@ -1,6 +1,9 @@
 import React, { createContext, useState } from "react"
 
-export const HostelDataContext = createContext()
+const defaultState = {
+    test: "john"
+}
+export const HostelDataContext = createContext(defaultState)
 
 export const HostelDataProvider = ({ children }) => {
     const [clickedHostelData, setClickedHostelData] = useState("");
