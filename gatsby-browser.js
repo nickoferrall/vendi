@@ -5,3 +5,18 @@
  */
 
 // You can delete this file if you're not using it
+
+import React from 'react'
+
+const defaultState = {
+    testing: "Yaaaay!",
+}
+export const HostelDataContext = React.createContext(defaultState)
+
+export const wrapRootElement = ({ element }) => {
+    return (
+        <HostelDataContext.Provider value={defaultState}>
+            {element}
+        </HostelDataContext.Provider>
+    )
+}
