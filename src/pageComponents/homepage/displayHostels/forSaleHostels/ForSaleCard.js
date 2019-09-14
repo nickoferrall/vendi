@@ -21,6 +21,7 @@ const ForSaleCard = ({ hostelData, classes }) => {
             <Grid className={classes.gridItem} item xs={12} md={10} >
                 <Link
                     to="/for-sale"
+                    state={{ hostelData }}
                     style={{ color: 'inherit', textDecoration: 'inherit' }}
                 >
                     <Card className={classes.card}>
