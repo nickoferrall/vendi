@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 
 // import FilteredFooter from './FilteredFooter'
-import QuestionAndAnswer from '../Filtered'
+import QuestionAndAnswer from '../filtered'
 
 const FilteredContainer = ({ filteredQuestions }) => {
     const [firstQueIndex, setFirstQueIndex] = useState(0)
