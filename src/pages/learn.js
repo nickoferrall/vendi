@@ -1,3 +1,14 @@
+import React from 'react';
+
+const learn = () => {
+    return (
+        <div>
+            Hey
+        </div>
+    );
+};
+
+export default learn;
 // import React, { useState } from "react"
 
 // import Filter from '../components/Filter'
