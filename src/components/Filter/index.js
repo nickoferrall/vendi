@@ -6,7 +6,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import TextField from '@material-ui/core/TextField'
 import withWidth from '@material-ui/core/withWidth'
 
-import styles from './filter.jss'
+import styles from './filterStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const Filter = ({ classes, filterQuestions, width }) => {
