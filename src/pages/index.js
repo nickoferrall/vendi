@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 
-// import Homepage from '../pageComponents/homepage'
+import Homepage from '../pageComponents/homepage'
 import Nav from '../components/Nav'
 import { HostelDataContext } from '../../gatsby-browser'
 
@@ -11,7 +11,7 @@ const IndexPage = () => {
     <>
       <Nav />
       {defaultState.testing}
-      {/* <Homepage /> */}
+      <Homepage />
     </>
   )
 }
