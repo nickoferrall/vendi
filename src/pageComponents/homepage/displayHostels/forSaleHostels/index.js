@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import ForSaleCard from './ForSaleCard'
 import useForSaleHostels from '../../../../hostelsData/ForSaleHostelsData'
 
-import styles from './ForSaleHostels.jss'
+import styles from './forSaleHostels.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 
