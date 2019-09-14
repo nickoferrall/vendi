@@ -2,15 +2,13 @@ import React, { useContext } from "react"
 
 import Homepage from '../pageComponents/homepage'
 import Nav from '../components/Nav'
-import { HostelDataContext } from '../../gatsby-browser'
+// import { HostelDataContext } from '../context/HostelDataContext'
 
 const IndexPage = () => {
-  const defaultState = useContext(HostelDataContext)
-  console.log("defaultState..", defaultState)
+  // const { hostelData, setHostelData } = useContext(HostelDataContext)
   return (
     <>
       <Nav />
-      {defaultState.testing}
       <Homepage />
     </>
   )

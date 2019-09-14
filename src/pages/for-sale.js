@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { HostelDataContext } from '../context/HostelDataContext'
 
 import ClickedForSaleHostel from '../pageComponents/clickedForSaleHostel'
 import Nav from '../components/Nav'
 
-const index = ({ location }) => {
-    console.log("location is....", location.state.hostelData)
+const ForSale = () => {
+    const { clickedHostelData } = useContext(HostelDataContext)
     return (
         <>
             <Nav />
-            <ClickedForSaleHostel hostelData={location.state.hostelData} />
+            <ClickedForSaleHostel hostelData={clickedHostelData} />
         </>
     );
 };
 
-export default index;
+export default ForSale;
