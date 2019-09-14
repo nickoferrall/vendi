@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import Filter from '../components/Filter'
-// import FilteredContainer from '../pageComponents/faq/filtered'
+import FilteredContainer from '../pageComponents/faq/filtered'
 import Header from '../components/Header'
 import Layout from "../components/layout"
 import Questions from '../pageComponents/faq/Questions'
@@ -45,12 +45,11 @@ const Learn = ({ classes }) => {
                         filterQuestions={filterQuestions}
                         setUserInput={setUserInput}
                     />
-                    <UnfilteredContainer />
-                    {/* {userInput.length === 0 ? (
+                    {userInput.length === 0 ? (
                         <UnfilteredContainer />
                     ) : (
                             <FilteredContainer filteredQuestions={filteredQuestions} />
-                        )} */}
+                        )}
                 </Grid>
             </Grid>
         </Layout>
