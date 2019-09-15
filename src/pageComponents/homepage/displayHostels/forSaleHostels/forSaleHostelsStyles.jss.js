@@ -7,9 +7,6 @@ const styles = theme => ({
     gridContainer: {
         padding: theme.spacing(4)
     },
-    gridItem: {
-        marginBottom: theme.spacing(6)
-    },
     media: {
         height: theme.spacing(28)
     },
