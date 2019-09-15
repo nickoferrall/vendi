@@ -7,7 +7,6 @@ import PanelDisplay from './PanelDisplay'
 
 const ClickedForSaleHostel = () => {
     const { clickedHostelData } = useContext(HostelDataContext)
-    console.log("from clicked...", clickedHostelData)
     if (clickedHostelData) {
         return (
             <>
@@ -17,11 +16,7 @@ const ClickedForSaleHostel = () => {
         )
     }
     else {
-        return (
-            <>
-                {"Nothing to see here!"}
-            </>
-        )
+        return null
     }
 }
 
