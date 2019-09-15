@@ -47,9 +47,7 @@ const PanelDisplay = ({ classes, hostelData }) => {
             </Grid>
             <Grid container justify="center">
                 <Grid item xs={8} className={classes.panelInfoGrid}>
-                    <Paper className={classes.paperContainer}>
-                        {panelInfo}
-                    </Paper>
+                    {panelInfo}
                     <Grid className={classes.contactButtonGrid} container justify="flex-end" >
                         <ContactBusiness hostelData={hostelData} />
                     </Grid>
