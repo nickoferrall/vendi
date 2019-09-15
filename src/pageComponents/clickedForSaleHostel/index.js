@@ -16,6 +16,13 @@ const ClickedForSaleHostel = () => {
             </>
         )
     }
+    else {
+        return (
+            <>
+                {"Nothing to see here!"}
+            </>
+        )
+    }
 }
 
 export default ClickedForSaleHostel
