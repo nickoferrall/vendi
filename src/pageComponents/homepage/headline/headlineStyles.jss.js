@@ -11,6 +11,9 @@ const styles = theme => ({
     headlineText: {
         [theme.breakpoints.down('md')]: {
             fontSize: '56px',
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: '40px',
         }
     }
 })
