@@ -10,7 +10,7 @@ import UnfilteredContainer from '../pageComponents/faq/unfiltered'
 
 import Grid from '@material-ui/core/Grid'
 
-import styles from '../pageStyles/learn.jss'
+import styles from '../pageStyles/learnStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const Learn = ({ classes }) => {
