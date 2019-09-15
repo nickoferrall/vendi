@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Img from 'gatsby-image'
-import { navigate } from "gatsby"
 
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -18,7 +17,7 @@ const AllHostelsCard = ({ hostelData, classes }) => {
 
     return (
         <Grid container justify="center" xs={12} md={4}>
-            <Grid className={classes.gridItem} item xs={12} md={10} >
+            <Grid className={classes.gridItem} item xs={9} md={10} >
                 <Card className={classes.card}>
                     <CardActionArea>
                         <Img className={classes.media} fluid={hostelData.image} />

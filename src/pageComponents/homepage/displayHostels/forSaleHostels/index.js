@@ -21,7 +21,7 @@ const ForSaleHostelsContainer = ({ classes }) => {
                     <Typography align="center" variant="h6">Find Hostels that are currently looking for buyers</Typography>
                 </Paper>
             </Grid>
-            <Grid container justify="center" style={{ padding: '2%' }}>
+            <Grid container justify="center">
                 {forSaleHostelsArr.map(hostel => {
                     return (
                         <ForSaleCard hostelData={hostel} />

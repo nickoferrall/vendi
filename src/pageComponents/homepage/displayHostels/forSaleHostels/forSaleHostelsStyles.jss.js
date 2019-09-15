@@ -2,7 +2,7 @@
 const styles = theme => ({
     card: {
         height: theme.spacing(57),
-        width: theme.spacing(42),
+        width: theme.spacing(42)
     },
     gridContainer: {
         padding: theme.spacing(4)
