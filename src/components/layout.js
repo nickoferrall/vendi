@@ -4,11 +4,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Nav from "./Nav"
 
-import styles from './LayoutStyles.jss'
-import { withStyles } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-
-const Layout = ({ children, classes }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,17 +18,12 @@ const Layout = ({ children, classes }) => {
   `)
 
   return (
-    <div
-      style={{
-        margin: '0 auto',
-        padding: 0
-      }}>
+    <>
       <Nav siteTitle={data.site.siteMetadata.title} />
-      <main className={classes.root}>{children}</main>
-    </div>
+      <CssBaseline />
+      <main>{children}</main>
+    </>
   )
 }
 
-export default withStyles(styles)(Layout)
-
-// export default Layout
+export default Layout
