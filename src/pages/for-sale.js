@@ -1,14 +1,13 @@
 import React from 'react'
 
 import ClickedForSaleHostel from '../pageComponents/clickedForSaleHostel'
-import Nav from '../components/Nav'
+import Layout from '../components/layout'
 
 const ForSale = () => {
     return (
-        <>
-            <Nav />
+        <Layout>
             <ClickedForSaleHostel />
-        </>
+        </Layout>
     );
 };
 
