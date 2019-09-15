@@ -5,7 +5,7 @@ const styles = theme => ({
         opacity: 0.85,
         padding: '16px',
         [theme.breakpoints.down('md')]: {
-            minWidth: '50%'
+            minWidth: '75%'
         }
     },
     headlineText: {
