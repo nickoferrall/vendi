@@ -4,6 +4,12 @@ const styles = theme => ({
         [theme.breakpoints.down('md')]: {
             width: '100%'
         }
+    },
+    paperContainer: {
+        padding: theme.spacing(3),
+        [theme.breakpoints.down('md')]: {
+            padding: theme.spacing(1)
+        }
     }
 })
 

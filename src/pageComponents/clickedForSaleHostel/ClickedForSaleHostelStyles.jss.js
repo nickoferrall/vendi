@@ -13,7 +13,10 @@ const styles = theme => ({
         margin: theme.spacing(2)
     },
     paperContainer: {
-        padding: theme.spacing(3)
+        padding: theme.spacing(3),
+        [theme.breakpoints.down('md')]: {
+            padding: theme.spacing(1)
+        }
     }
 })
 
