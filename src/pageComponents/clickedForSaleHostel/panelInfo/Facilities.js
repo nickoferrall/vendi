@@ -7,7 +7,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 
-import styles from './FacilitiesStyles.jss'
+import styles from '../ClickedForSaleHostelStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const Facilities = ({ classes, hostelData }) => {

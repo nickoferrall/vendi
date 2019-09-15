@@ -9,6 +9,12 @@ const styles = theme => ({
     keyInfo: {
         padding: theme.spacing(3)
     },
+    listItem: {
+        width: '48%',
+        [theme.breakpoints.down('md')]: {
+            width: '100%'
+        }
+    },
     panelInfoGrid: {
         margin: theme.spacing(2)
     },
@@ -16,6 +22,9 @@ const styles = theme => ({
         padding: theme.spacing(3),
         [theme.breakpoints.down('md')]: {
             padding: theme.spacing(1)
+        },
+        [theme.breakpoints.down('sm')]: {
+            padding: 0
         }
     }
 })
