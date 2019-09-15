@@ -18,7 +18,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 const ForSaleCard = ({ hostelData, classes }) => {
 
-    const { clickedHostelData, setClickedHostelData } = useContext(HostelDataContext)
+    const { setClickedHostelData } = useContext(HostelDataContext)
 
     const handleClick = () => {
         setClickedHostelData(hostelData)

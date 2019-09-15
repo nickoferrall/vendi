@@ -14,11 +14,11 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   navItemContainer: {
     marginRight: theme.spacing(15),
+    [theme.breakpoints.down('md')]: {
+      marginRight: theme.spacing(1),
+    }
   },
   navItem: {
     marginRight: theme.spacing(10),
