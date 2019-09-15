@@ -14,7 +14,7 @@ const styles = theme => ({
         height: theme.spacing(28)
     },
     paperTitle: {
-        margin: theme.spacing(3),
+        margin: theme.spacing(8),
         padding: theme.spacing(2),
         width: theme.spacing(100)
     },

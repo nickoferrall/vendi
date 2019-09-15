@@ -21,7 +21,7 @@ const AllHostelsContainer = ({ classes }) => {
                     <Typography align="center" variant="h6">Browse all the hostels in Colombia</Typography>
                 </Paper>
             </Grid>
-            <Grid container className={classes.gridContainer} >
+            <Grid container justify="center">
                 {allHostelsArr.map(hostel => {
                     return (
                         <AllHostelsCard hostelData={hostel} />

@@ -4,9 +4,6 @@ const styles = theme => ({
         height: theme.spacing(57),
         width: theme.spacing(42),
     },
-    gridContainer: {
-        padding: theme.spacing(4)
-    },
     gridItem: {
         marginBottom: theme.spacing(6)
     },
@@ -14,7 +11,7 @@ const styles = theme => ({
         height: theme.spacing(28)
     },
     paperTitle: {
-        margin: theme.spacing(3),
+        margin: theme.spacing(8),
         padding: theme.spacing(2),
         width: theme.spacing(100),
     },
