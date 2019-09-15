@@ -6,11 +6,11 @@ import Typography from '@material-ui/core/Typography';
 
 import BackgroundImage from 'gatsby-background-image'
 
-import styles from './headline.jss'
+import styles from './headlineStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const Headline = ({ classes }) => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       homepageImage: file(relativePath: { eq: "hostel-homepage.jpg" }) {
         childImageSharp {
@@ -22,18 +22,18 @@ const Headline = ({ classes }) => {
     }
   `)
 
-    return (
-        <BackgroundImage
-            fluid={data.homepageImage.childImageSharp.fluid}
-            style={{ opacity: 0.99 }}
-        >
-            <Grid container alignItems="center" justify="center" style={{ height: '600px' }}>
-                <Grid item xs={4} className={classes.headlineText}>
-                    <Typography variant="h2">Buy, sell and learn how to run a hostel</Typography>
-                </Grid>
-            </Grid >
-        </BackgroundImage >
-    )
+  return (
+    <BackgroundImage
+      fluid={data.homepageImage.childImageSharp.fluid}
+      style={{ opacity: 0.99 }}
+    >
+      <Grid container alignItems="center" justify="center" style={{ height: '600px' }}>
+        <Grid item xs={4} className={classes.headlineText}>
+          <Typography variant="h2">Buy, sell and learn how to run a hostel</Typography>
+        </Grid>
+      </Grid >
+    </BackgroundImage >
+  )
 }
 
 export default withStyles(styles)(Headline)
