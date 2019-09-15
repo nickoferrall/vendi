@@ -2,7 +2,10 @@
 const styles = theme => ({
     card: {
         height: theme.spacing(57),
-        width: theme.spacing(42)
+        width: theme.spacing(42),
+        [theme.breakpoints.down('md')]: {
+            marginBottom: theme.spacing(6)
+        }
     },
     gridContainer: {
         padding: theme.spacing(4)
