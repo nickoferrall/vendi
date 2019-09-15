@@ -27,8 +27,8 @@ const Headline = ({ classes }) => {
       fluid={data.homepageImage.childImageSharp.fluid}
     >
       <Grid container alignItems="center" justify="center" style={{ height: '600px' }}>
-        <Grid item className={classes.headlineText} xs={4}>
-          <Typography variant="h2">Buy, sell and learn how to run a hostel</Typography>
+        <Grid item className={classes.headlineBox} xs={4}>
+          <Typography className={classes.headlineText} variant="h2">Buy, sell and learn how to run a hostel</Typography>
         </Grid>
       </Grid >
     </BackgroundImage >

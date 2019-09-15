@@ -1,9 +1,17 @@
 const styles = theme => ({
-    header: {
+    headerContainer: {
         backgroundColor: '#FFF',
         borderRadius: '5px',
         opacity: 0.85,
-        padding: '15px'
+        padding: '16px',
+        [theme.breakpoints.down('md')]: {
+            minWidth: '50%'
+        }
+    },
+    headlineText: {
+        [theme.breakpoints.down('md')]: {
+            fontSize: '40px',
+        }
     }
 })
 

@@ -1,8 +1,17 @@
 const styles = theme => ({
-    headlineText: {
+    headlineBox: {
         backgroundColor: '#FFF',
+        borderRadius: '5px',
         opacity: 0.85,
-        padding: theme.spacing(1.5)
+        padding: theme.spacing(1.5),
+        [theme.breakpoints.down('md')]: {
+            minWidth: '50%'
+        }
+    },
+    headlineText: {
+        [theme.breakpoints.down('md')]: {
+            fontSize: '56px',
+        }
     }
 })
 

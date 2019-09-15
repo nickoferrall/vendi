@@ -29,8 +29,8 @@ const Header = ({ classes, imageHeight = "300px", title }) => {
       style={{ opacity: 0.99 }}
     >
       <Grid container alignItems="center" justify="center" style={{ height: imageHeight }}>
-        <Grid item xs={4} className={classes.header}>
-          <Typography variant="h2">{title}</Typography>
+        <Grid item xs={4} className={classes.headerContainer}>
+          <Typography className={classes.headlineText} variant="h2">{title}</Typography>
         </Grid>
       </Grid >
     </BackgroundImage >
