@@ -2,6 +2,9 @@ var plugins = [{
       plugin: require('/Users/nick/vendi/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
+      plugin: require('/Users/nick/vendi/node_modules/gatsby-plugin-jss/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
       plugin: require('/Users/nick/vendi/node_modules/gatsby-plugin-material-ui/gatsby-ssr'),
       options: {"plugins":[],"stylesProvider":{"injectFirst":true}},
     },{

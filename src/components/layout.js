@@ -1,10 +1,14 @@
 import React from "react"
-import PropTypes from "prop-types"
+
 import { useStaticQuery, graphql } from "gatsby"
 
 import Nav from "./Nav"
 
-const Layout = ({ children }) => {
+import styles from './LayoutStyles.jss'
+import { withStyles } from '@material-ui/core/styles'
+
+
+const Layout = ({ children, classes }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -16,12 +20,17 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div
+      style={{
+        margin: '0 auto',
+        padding: 0
+      }}>
       <Nav siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-    </>
+      <main className={classes.root}>{children}</main>
+    </div>
   )
 }
 
+export default withStyles(styles)(Layout)
 
-export default Layout
+// export default Layout

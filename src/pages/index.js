@@ -1,14 +1,13 @@
 import React from "react"
 
 import Homepage from '../pageComponents/homepage'
-import Nav from '../components/Nav'
+import Layout from '../components/layout'
 
 const IndexPage = () => {
   return (
-    <>
-      <Nav />
+    <Layout>
       <Homepage />
-    </>
+    </Layout>
   )
 }
 
