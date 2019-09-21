@@ -11,7 +11,7 @@ const ClickedForSaleHostel = () => {
         return (
             <>
                 <Header title={clickedHostelData.title} />
-                <PanelDisplay hostelData={clickedHostelData} />
+                {/* <PanelDisplay hostelData={clickedHostelData} /> */}
             </>
         )
     }

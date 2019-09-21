@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import Img from 'gatsby-image'
 import { navigate } from "gatsby"
 
-import { HostelDataContext } from '../../../../context/HostelDataContext'
+import { HostelDataContext } from '../../../context/HostelDataContext'
 
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -13,10 +13,10 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import styles from './forSaleHostelsStyles.jss'
+import styles from './hostelCardStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
-const ForSaleCard = ({ hostelData, classes }) => {
+const HostelCard = ({ classes, hostelData }) => {
 
     const { setClickedHostelData } = useContext(HostelDataContext)
 
@@ -36,8 +36,8 @@ const ForSaleCard = ({ hostelData, classes }) => {
                                 {hostelData.title}
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {hostelData.shortDescription.length < 250 ? hostelData.shortDescription :
-                                    `${hostelData.shortDescription.substring(0, 250)}...`}
+                                {hostelData.body.length < 250 ? hostelData.body :
+                                    `${hostelData.body.substring(0, 250)}...`}
                             </Typography>
                         </CardContent>
                     </CardActionArea>
@@ -52,5 +52,5 @@ const ForSaleCard = ({ hostelData, classes }) => {
     );
 }
 
-export default withStyles(styles)(ForSaleCard)
+export default withStyles(styles)(HostelCard)
 
