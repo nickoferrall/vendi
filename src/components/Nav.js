@@ -36,15 +36,17 @@ export default function ButtonAppBar() {
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
           Vendi
-          </Typography>
+        </Typography>
         <Box className={classes.navItemContainer} >
           <Link
+            activeStyle={{ textDecoration: 'underline' }}
             to={'/'}
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
             <Button className={classes.navItem} color="inherit">Buy / Sell</Button>
           </Link>
           <Link
+            activeStyle={{ textDecoration: 'underline' }}
             to={'/learn'}
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
