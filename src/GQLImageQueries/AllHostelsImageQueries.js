@@ -39,7 +39,19 @@ const useImageQueries = () => {
             ...GatsbyImageSharpFluid
             }}}
 
+            ivyHostel: file(relativePath: { eq: "hostels/ivy-hostel.jpg" }) {
+            childImageSharp {
+            fluid(maxWidth: 1000, quality: 90) {
+            ...GatsbyImageSharpFluid
+            }}}
+
             makako: file(relativePath: { eq: "hostels/makako.jpg" }) {
+                childImageSharp {
+                fluid(maxWidth: 1000, quality: 90) {
+                ...GatsbyImageSharpFluid
+            }}}
+
+            medellinVibes: file(relativePath: { eq: "hostels/medellin-vibes.jpg" }) {
                 childImageSharp {
                 fluid(maxWidth: 1000, quality: 90) {
                 ...GatsbyImageSharpFluid
@@ -62,6 +74,12 @@ const useImageQueries = () => {
             fluid(maxWidth: 1000, quality: 90) {
             ...GatsbyImageSharpFluid
             }}}
+
+            wanderingPaisa: file(relativePath: { eq: "hostels/wandering-paisa.jpg" }) {
+            childImageSharp {
+            fluid(maxWidth: 1000, quality: 90) {
+            ...GatsbyImageSharpFluid
+            }}}
         }
     
   `)
@@ -71,10 +89,13 @@ const useImageQueries = () => {
         imageData.cocoaHostel.childImageSharp.fluid,
         imageData.dreamerHostel.childImageSharp.fluid,
         imageData.hostelTralalaSalento.childImageSharp.fluid,
+        imageData.ivyHostel.childImageSharp.fluid,
         imageData.makako.childImageSharp.fluid,
+        imageData.medellinVibes.childImageSharp.fluid,
         imageData.oasisCali.childImageSharp.fluid,
         imageData.renacer.childImageSharp.fluid,
-        imageData.theCrankyCrocHostel.childImageSharp.fluid
+        imageData.theCrankyCrocHostel.childImageSharp.fluid,
+        imageData.wanderingPaisa.childImageSharp.fluid
     ]
 }
 
