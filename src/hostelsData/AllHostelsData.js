@@ -17,10 +17,13 @@ const useAllHostelsData = () => {
         cocoaHostelImgData,
         dreamerHostelImgData,
         hostelTralalaSalentoImgData,
+        ivyHostelImgData,
         makakoImgData,
+        medellinVibesImgData,
         oasisCaliImgData,
         renacerImgData,
-        theCrankyCrocHostelImgData
+        theCrankyCrocHostelImgData,
+        wanderingPaisaImgData
     ] = useImageQueries()
 
     const blackSheepMedellin = {
@@ -58,12 +61,26 @@ const useAllHostelsData = () => {
         image: hostelTralalaSalentoImgData,
         title: "Hostel Tralala Salento",
     }
+    const ivyHostel = {
+        body: "Ivy is an Australian and American-owned hostel. As experienced backpackers ourselves, we strive to incorporate the characteristics that we find so important in hostels . Here you will find a chill yet sociable environment in a converted mansion with all of the creature comforts of home. Looking for an amazing included breakfast? You’ll find it here. TV room with Netflix? Yep. Bar? Yep. We’re not a party hostel, but you can find good times, forge new friendships in the bar or in one of our common areas, and then bank some solid sleep once the party is over. If you are like many of our guests, you will find yourself becoming part of the Ivy family and extending your stay with us! The hostel is located in a clean and comfortable 9-bedroom, 7-bathroom mansion, including 3 private rooms and 6 dorms varying in size from 3 to 8 beds.",
+        city: "Medellin",
+        country: "Colombia",
+        image: ivyHostelImgData,
+        title: "Ivy Hostel",
+    }
     const makako = {
         body: "Beautiful Colonial house located in the center of the Old Town, inside the Walled City on the safest and most picturesque and colorful street. Surrounded by museums, restaurants, bars, supermarkets and more. Exclusive Party bus for guests including open bar , food and free entrance to clubs. Also we offer you free entrance to clubs every night.",
         city: "Cartagena",
         country: "Colombia",
         image: makakoImgData,
         title: "Makako Hostel",
+    }
+    const medellinVibes = {
+        body: "Medellín Vibes is a luxury hostel, where you can find a quiet, natural and cosy atmosphere, a great option for travellers interested in sharing experiences, we have an excellent communal kitchen and a spectacular bar next to the pool, where our guests can delight the palate with exquisite snacks, different preparations of our 100% Colombian coffee and take the best cocktails in the city. We are located in the city of Medellín - Antioquia in the El Poblado neighborhood, 500 meters from the El Poblado metro station and the Monterrey Shopping Center, 600 meters from the Lleras Park (place of nightclubs, bars and restaurants), 1.5 km away from the Santafé Shopping Center and 3 km from the Plaza Mayor Convention Center. We offer mixed and feminine shared rooms with private bathroom, for 4, 6 and 8 people, with hair dryer, curtains, fan and reading lights in each of the beds and 15 private rooms and luxury double suites, these have 49 'Smart TV, free WiFi, private bathroom, air conditioners and safe deposit boxes.",
+        city: "Medellin",
+        country: "Colombia",
+        image: medellinVibesImgData,
+        title: "Medellin Vibes",
     }
     const oasisCali = {
         address: "Calle 2 Oeste #25 28, San Fernando, Cali, Colombia",
@@ -112,6 +129,13 @@ const useAllHostelsData = () => {
         image: theCrankyCrocHostelImgData,
         title: "The Cranky Croc Hostel",
     }
+    const wanderingPaisa = {
+        body: "Come stay in the hostel in Medellin that Hostelworld awarded “The Best Hostel in Colombia”. At the Wandering Paisa Backpackers Hostel, our mission is to provide the most authentic cultural experience in Medellin, while also giving our guests a safe and comfortable place to stay. With our weekly events, we give backpackers the opportunity to meet locals, offering an experience that fosters friendship between different cultures and nationalities. We are located in Laureles, an upscale local neighborhood next to the city center, which features bars, clubs, and the best salsa clubs in town. Come visit!",
+        city: "Medellin",
+        country: "Colombia",
+        image: wanderingPaisaImgData,
+        title: "Wandering Paisa",
+    }
 
     const [allHostelsArr] = useState([
         blackSheepMedellin,
@@ -119,10 +143,13 @@ const useAllHostelsData = () => {
         cocoaHostel,
         dreamerHostel,
         hostelTralalaSalento,
+        ivyHostel,
         makako,
+        medellinVibes,
         oasisCali,
         renacer,
-        theCrankyCrocHostel
+        theCrankyCrocHostel,
+        wanderingPaisa
     ])
 
     return [allHostelsArr]

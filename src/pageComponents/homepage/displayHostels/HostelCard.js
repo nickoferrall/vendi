@@ -36,8 +36,8 @@ const HostelCard = ({ classes, hostelData }) => {
                                 {hostelData.title}
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {hostelData.body.length < 250 ? hostelData.body :
-                                    `${hostelData.body.substring(0, 250)}...`}
+                                {hostelData.body.length < 225 ? hostelData.body :
+                                    `${hostelData.body.substring(0, 225)}...`}
                             </Typography>
                         </CardContent>
                     </CardActionArea>
