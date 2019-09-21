@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
 import AllHostelsCard from './AllHostelsCard'
@@ -16,10 +16,10 @@ const AllHostelsContainer = ({ classes }) => {
     return (
         <>
             <Grid container justify="center">
-                <Paper align="center" className={classes.paperTitle}>
+                <Box className={classes.boxTitle}>
                     <Typography align="center" className={classes.title} variant="h4" >All Hostels</Typography>
                     <Typography align="center" variant="h6">Browse all the hostels in Colombia</Typography>
-                </Paper>
+                </Box>
             </Grid>
             <Grid container justify="center">
                 {allHostelsArr.map(hostel => {

@@ -10,10 +10,10 @@ const styles = theme => ({
     media: {
         height: theme.spacing(28)
     },
-    paperTitle: {
-        margin: theme.spacing(8),
+    boxTitle: {
+        margin: theme.spacing(4),
         padding: theme.spacing(2),
-        width: theme.spacing(100),
+        width: theme.spacing(100)
     },
     title: {
         padding: theme.spacing(2)
