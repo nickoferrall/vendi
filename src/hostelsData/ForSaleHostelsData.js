@@ -29,7 +29,6 @@ const useForSaleHostels = () => {
         },
         image: oasisCaliImgData,
         price: '$50,000 USD',
-        shortDescription: "Oasis Cali Hostel is Cali's most interesting and well rated hostel. A cross-over between backpacker and flash-packer it has something for everyone and is more a home and than a hostel but with the mod-cons of a boutique hotel.",
         title: "Oasis Cali Hostel",
     }
     const renacer = {
@@ -47,7 +46,6 @@ const useForSaleHostels = () => {
         },
         image: renacerImgData,
         price: '$891,000 USD',
-        shortDescription: "Hostal Renacer is a hostel in Villa de Leyva. We offer a beautiful, safe and strategically located country style hostel, close to the center of Villa de Leyva, where you will feel at home. We are so lucky to have a property in the middle of the nature and just a 15/20 minutes walking or 6 min in a car. (1.2 KM)",
         title: "Hostel Renacer",
     }
     const [forSaleHostelsArr] = useState([oasisCali, renacer])

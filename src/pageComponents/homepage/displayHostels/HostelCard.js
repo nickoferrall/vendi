@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Img from 'gatsby-image'
+import { navigate } from "gatsby"
+
+import { HostelDataContext } from '../../../context/HostelDataContext'
 
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -10,15 +13,22 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import styles from './AllHostelsStyles.jss'
+import styles from './hostelCardStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
-const AllHostelsCard = ({ hostelData, classes }) => {
+const HostelCard = ({ classes, hostelData }) => {
+
+    const { setClickedHostelData } = useContext(HostelDataContext)
+
+    const handleClick = () => {
+        setClickedHostelData(hostelData)
+        navigate("/for-sale")
+    }
 
     return (
-        <Grid container justify="center" xs={12} md={4}>
-            <Grid className={classes.gridItem} item xs={8.5}>
-                <Card className={classes.card}>
+        <Grid container justify="center" xs={12} md={4} >
+            <Grid item xs={8.5}>
+                <Card className={classes.card} onClick={() => handleClick()}>
                     <CardActionArea>
                         <Img className={classes.media} fluid={hostelData.image} />
                         <CardContent>
@@ -32,15 +42,15 @@ const AllHostelsCard = ({ hostelData, classes }) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary">
+                        <Button color="primary" size="small">
                             Learn More
                         </Button>
                     </CardActions>
                 </Card>
             </Grid >
-        </Grid>
+        </Grid >
     );
 }
 
-export default withStyles(styles)(AllHostelsCard)
+export default withStyles(styles)(HostelCard)
 

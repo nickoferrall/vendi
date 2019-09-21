@@ -27,22 +27,26 @@ const PanelDisplay = ({ classes, hostelData }) => {
     else if (value === 2) {
         panelInfo = <Facilities hostelData={hostelData} />
     }
-
     return (
         <Grid container>
             <Grid item xs={12}>
                 <Paper>
-                    <Tabs
-                        centered
-                        indicatorColor="primary"
-                        onChange={(event, newValue) => setValue(newValue)}
-                        textColor="primary"
-                        value={value}
-                    >
-                        <Tab label="Description" />
-                        <Tab label="Images" />
-                        <Tab label="Facilities" />
-                    </Tabs>
+                    {hostelData.facilities ?
+                        <>
+                            <Tabs
+                                centered
+                                indicatorColor="primary"
+                                onChange={(event, newValue) => setValue(newValue)}
+                                textColor="primary"
+                                value={value}
+                            >
+                                <Tab label="Description" />
+                                <Tab label="Images" />
+                                <Tab label="Facilities" />
+                            </Tabs>
+                        </>
+                        : null
+                    }
                 </Paper>
             </Grid>
             <Grid container justify="center">

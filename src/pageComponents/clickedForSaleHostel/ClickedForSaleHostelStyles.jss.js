@@ -20,11 +20,8 @@ const styles = theme => ({
     },
     paperContainer: {
         padding: theme.spacing(3),
-        [theme.breakpoints.down('md')]: {
-            padding: theme.spacing(1)
-        },
         [theme.breakpoints.down('sm')]: {
-            padding: 0
+            padding: theme.spacing(2),
         }
     }
 })
