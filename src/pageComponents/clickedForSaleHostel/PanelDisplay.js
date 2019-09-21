@@ -18,7 +18,7 @@ const PanelDisplay = ({ classes, hostelData }) => {
     const [value, setValue] = useState(0);
 
     let panelInfo;
-    if (value === 0) {
+    if (value === 0 | hostelData.facilities === undefined) {
         panelInfo = <Description hostelData={hostelData} />
     }
     else if (value === 1) {
@@ -40,8 +40,13 @@ const PanelDisplay = ({ classes, hostelData }) => {
                         value={value}
                     >
                         <Tab label="Description" />
-                        <Tab label="Images" />
-                        <Tab label="Facilities" />
+                        {hostelData.facilities ?
+                            <>
+                                <Tab label="Images" />
+                                <Tab label="Facilities" />
+                            </>
+                            : null
+                        }
                     </Tabs>
                 </Paper>
             </Grid>
