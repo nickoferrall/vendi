@@ -13,7 +13,7 @@ const Homepage = () => {
             <Headline />
             <DisplayHostelsContainer
                 hostelData={forSaleHostelsArr}
-                subtitle={"Find Hostels that are currently looking for buyers"}
+                subtitle={"Find hostels that are currently looking for buyers"}
                 title={"For Sale"}
             />
             <DisplayHostelsContainer
