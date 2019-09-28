@@ -1,19 +1,40 @@
 import React from "react"
 import { graphql } from 'gatsby'
 
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
 import DisplayHostelsContainer from '../pageComponents/homepage/displayHostels'
 import Headline from '../pageComponents/homepage/headline'
+import HostelCard from '../pageComponents/homepage/displayHostels/HostelCard'
 import Layout from '../components/layout'
 
-const IndexPage = ({ data: { allContentfulAllHostels } }) => {
+import styles from '../pageComponents/homepage/displayHostels/hostelCardStyles.jss'
+import { withStyles } from '@material-ui/core/styles'
+
+const IndexPage = ({ classes, data: { allContentfulAllHostels } }) => {
+  console.log("Index home", allContentfulAllHostels.edges[0].node)
   return (
     <Layout>
       <Headline />
-      <DisplayHostelsContainer
+      <Grid container justify="center">
+        <Box className={classes.boxTitle}>
+          <Typography align="center" className={classes.title} variant="h4" >{"For Sale"}</Typography>
+          <Typography align="center" variant="h6">{"Find hostels that are currently looking for buyers"}</Typography>
+        </Box>
+      </Grid>
+      <Grid container justify="center">
+        {allContentfulAllHostels.edges.map(hostel => {
+          return hostel.node.forSale ?
+            <HostelCard hostelData={hostel.node} /> : null
+        })}
+      </Grid>
+      {/* <DisplayHostelsContainer
         hostelData={allContentfulAllHostels.edges}
         subtitle={"Find hostels that are currently looking for buyers"}
         title={"For Sale"}
-      />
+      /> */}
     </Layout>
   )
 }
@@ -55,4 +76,4 @@ query allHostels {
   }
 `
 
-export default IndexPage
+export default withStyles(styles)(IndexPage)

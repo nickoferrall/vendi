@@ -13,12 +13,12 @@ import { withStyles } from '@material-ui/core/styles'
 const DisplayHostelsContainer = ({ classes, hostelData, subtitle, title }) => {
     return (
         <>
-            <Grid container justify="center">
+            {/* <Grid container justify="center">
                 <Box className={classes.boxTitle}>
                     <Typography align="center" className={classes.title} variant="h4" >{title}</Typography>
                     <Typography align="center" variant="h6">{subtitle}</Typography>
                 </Box>
-            </Grid>
+            </Grid> */}
             <Grid container justify="center">
                 {hostelData.map(hostel => {
                     return (
