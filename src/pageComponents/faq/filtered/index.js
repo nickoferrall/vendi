@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 import Grid from '@material-ui/core/Grid'
 
-// import FilteredFooter from './FilteredFooter'
 import QuestionAndAnswer from '../filtered/QuestionAndAnswer'
 
 const FilteredContainer = ({ filteredQuestions }) => {

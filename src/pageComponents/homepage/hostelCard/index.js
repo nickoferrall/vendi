@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import Img from 'gatsby-image'
 import { navigate } from "gatsby"
-
-// import { HostelDataContext } from '../../../context/HostelDataContext'
 
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -17,13 +15,9 @@ import styles from './hostelCardStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const HostelCard = ({ classes, hostelData }) => {
-    // const { setClickedHostelData } = useContext(HostelDataContext)
     const description = hostelData.description.description
 
-    // console.log("hostelData...", setClickedHostelData)
-
     const handleClick = () => {
-        // setClickedHostelData(hostelData)
         navigate(`/for-sale/${hostelData.slug}`)
     }
 

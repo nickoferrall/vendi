@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'
-
-// import { HostelDataContext } from '../../context/HostelDataContext'
+import React from 'react'
 
 import Header from '../../components/Header'
 import PanelDisplay from './PanelDisplay'
