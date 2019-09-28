@@ -11,7 +11,7 @@ const Description = ({ hostelData, classes }) => {
     return (
         <Paper className={classes.paperContainer}>
             <Typography variant="h5">
-                {hostelData.title}
+                {hostelData.hostelName}
             </Typography>
             <Typography variant="h6">
                 {hostelData.price}
@@ -21,7 +21,7 @@ const Description = ({ hostelData, classes }) => {
             </Typography>
             <Box className={classes.box}>
                 <Typography variant="body">
-                    {hostelData.body}
+                    {hostelData.description.description}
                 </Typography>
             </Box>
         </Paper>

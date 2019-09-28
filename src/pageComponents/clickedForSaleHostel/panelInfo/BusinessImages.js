@@ -40,8 +40,9 @@ const BusinessImages = ({ hostelData }) => {
                 slidesToShow={1}
                 speed={500}
             >
-                <Img fluid={hostelData.image} />
-                <Img fluid={hostelData.image} />
+                {hostelData.image.map(img => {
+                    return <Img fluid={img.fluid} />
+                })}
             </Slider>
         </Wrapper>
     )

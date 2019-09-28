@@ -1,11 +1,61 @@
 import React from 'react';
+import { graphql } from 'gatsby'
 
-const forSale = () => {
+import ClickedForSaleHostel from '../pageComponents/clickedForSaleHostel';
+import Layout from '../components/layout'
+
+const forSale = ({ data: { allContentfulAllHostels } }) => {
+  if (allContentfulAllHostels) {
     return (
-        <div>
-            Programatically created!
-        </div>
+      <>
+        <Layout />
+        {allContentfulAllHostels.edges.map(edge => {
+          return (
+            <ClickedForSaleHostel
+              hostelData={edge.node}
+            />
+          )
+        })}
+      </>
     );
+  }
 };
+
+export const query = graphql`
+query hostels($slug: String!) {
+    allContentfulAllHostels(filter: { slug: { eq: $slug}}) {
+      edges{
+        node {
+          id
+          slug
+          forSale
+          hostelName
+          city
+          country
+          price
+          description {
+              description
+              }
+            facilities {
+            id,
+            Wifi
+            Towels
+            Showers
+            Tour_Desk
+            Ceiling_Fans
+            Swimming_Pool
+            Air_Conditioning
+            English_Speaking_Staff
+            } 
+          image {
+              fluid(maxWidth: 800) {
+                  ...GatsbyContentfulFluid
+              }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default forSale;

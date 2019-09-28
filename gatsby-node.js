@@ -24,6 +24,30 @@ exports.createPages = async ({ actions, graphql }) => {
             node {
                 id
                 slug
+                forSale
+                hostelName
+                city
+                country
+                price
+                description {
+                    description
+                    }
+              facilities {
+                id,
+                Wifi
+                Towels
+                Showers
+                Tour_Desk
+                Ceiling_Fans
+                Swimming_Pool
+                Air_Conditioning
+                English_Speaking_Staff
+              } 
+                image {
+                    fluid(maxWidth: 800) {
+                        ...GatsbyContentfulFluid
+                    }
+                }
                 }
             }
         }
@@ -35,7 +59,9 @@ exports.createPages = async ({ actions, graphql }) => {
             path: `/for-sale/${post.slug}`,
             component: PostTemplate,
             context: {
-                slug: post.slug
+                slug: post.slug,
+                previous,
+                next
             }
         })
     })
