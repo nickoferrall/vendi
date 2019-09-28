@@ -6,13 +6,14 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import Headline from '../pageComponents/homepage/headline'
-import HostelCard from '../pageComponents/homepage/hostelCard/HostelCard'
+import HostelCard from '../pageComponents/homepage/hostelCard'
 import Layout from '../components/layout'
 
 import styles from '../pageComponents/homepage/hostelCard/hostelCardStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const IndexPage = ({ classes, data: { allContentfulAllHostels } }) => {
+  console.log("Index HOME", allContentfulAllHostels)
   return (
     <Layout>
       <Headline />

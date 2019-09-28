@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import FaqSectionTitle from './FaqSectionTitle'
 import Questions from '../Questions'
 
-import styles from './unfiltered.jss'
+import styles from './unfilteredStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const UnfilteredContainer = () => {

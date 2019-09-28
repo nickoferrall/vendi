@@ -8,7 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import SvgIcon from '@material-ui/core/SvgIcon'
 import Typography from '@material-ui/core/Typography'
 
-import styles from './filtered.jss'
+import styles from './filteredStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const QuestionAndAnswer = ({ classes, qAndA }) => {
