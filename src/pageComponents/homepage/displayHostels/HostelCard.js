@@ -22,7 +22,7 @@ const HostelCard = ({ classes, hostelData }) => {
 
     const handleClick = () => {
         setClickedHostelData(hostelData)
-        navigate("/for-sale")
+        navigate(`/for-sale/${hostelData.slug}`)
     }
 
     return (

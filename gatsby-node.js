@@ -24,30 +24,6 @@ exports.createPages = async ({ actions, graphql }) => {
             node {
                 id
                 slug
-                forSale
-                hostelName
-                city
-                country
-                price
-                description {
-                    description
-                    }
-              facilities {
-                id,
-                Wifi
-                Towels
-                Showers
-                Tour_Desk
-                Ceiling_Fans
-                Swimming_Pool
-                Air_Conditioning
-                English_Speaking_Staff
-              } 
-                image {
-                    fluid(maxWidth: 800) {
-                        ...GatsbyContentfulFluid
-                    }
-                }
                 }
             }
         }
@@ -59,10 +35,61 @@ exports.createPages = async ({ actions, graphql }) => {
             path: `/for-sale/${post.slug}`,
             component: PostTemplate,
             context: {
-                slug: post.slug,
-                previous,
-                next
+                slug: post.slug
             }
         })
     })
 }
+
+// exports.createPages = async ({ actions, graphql }) => {
+//     const { createPage } = actions
+//     const result = await graphql(`
+//     {
+//         allContentfulAllHostels {
+//         edges {
+//             node {
+//                 id
+//                 slug
+//                 forSale
+//                 hostelName
+//                 city
+//                 country
+//                 price
+//                 description {
+//                     description
+//                     }
+//               facilities {
+//                 id,
+//                 Wifi
+//                 Towels
+//                 Showers
+//                 Tour_Desk
+//                 Ceiling_Fans
+//                 Swimming_Pool
+//                 Air_Conditioning
+//                 English_Speaking_Staff
+//             } 
+//                 image {
+//                     fluid(maxWidth: 800) {
+//                         ...GatsbyContentfulFluid
+//                     }
+//                 }
+//                 }
+//             }
+//         }
+//     }
+//     `)
+//     console.log("NODE", JSON.stringify(result, null, 4))
+//     const posts = result.data.allContentfulAllHostels.edges
+//     posts.forEach(({ node: post }) => {
+//         createPage({
+//             path: `/for-sale/${post.slug}`,
+//             component: PostTemplate,
+//             context: {
+//                 slug: post.slug,
+//                 // previous,
+//                 // next
+//             }
+//         })
+//     })
+// }

@@ -3,14 +3,12 @@ import { graphql } from 'gatsby'
 
 import DisplayHostelsContainer from '../pageComponents/homepage/displayHostels'
 import Headline from '../pageComponents/homepage/headline'
-import Homepage from '../pageComponents/homepage'
 import Layout from '../components/layout'
 
 const IndexPage = ({ data: { allContentfulAllHostels } }) => {
-  // console.log("data --> index pags", data)
+  // console.log("data --> index pags", allContentfulAllHostels)
   return (
     <Layout>
-      {/* <Homepage /> */}
       <Headline />
       <DisplayHostelsContainer
         hostelData={allContentfulAllHostels.edges}

@@ -9,10 +9,10 @@ const forSale = ({ data: { allContentfulAllHostels } }) => {
     return (
       <>
         <Layout />
-        {allContentfulAllHostels.edges.map(edge => {
+        {allContentfulAllHostels.edges.map(hostel => {
           return (
             <ClickedForSaleHostel
-              hostelData={edge.node}
+              hostelData={hostel.node}
             />
           )
         })}
@@ -28,6 +28,7 @@ query hostels($slug: String!) {
         node {
           id
           slug
+          address
           forSale
           hostelName
           city

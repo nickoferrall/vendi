@@ -6,7 +6,6 @@ import Header from '../../components/Header'
 import PanelDisplay from './PanelDisplay'
 
 const ClickedForSaleHostel = ({ hostelData }) => {
-    // const { clickedHostelData } = useContext(HostelDataContext)
     if (hostelData) {
         return (
             <>
