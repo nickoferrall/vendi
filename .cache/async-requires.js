@@ -2,7 +2,6 @@
 const preferDefault = m => m && m.default || m
 
 exports.components = {
-  "component---src-templates-for-sale-js": () => import("/Users/nick/vendi/src/templates/forSale.js" /* webpackChunkName: "component---src-templates-for-sale-js" */),
   "component---cache-dev-404-page-js": () => import("/Users/nick/vendi/.cache/dev-404-page.js" /* webpackChunkName: "component---cache-dev-404-page-js" */),
   "component---src-pages-404-js": () => import("/Users/nick/vendi/src/pages/404.js" /* webpackChunkName: "component---src-pages-404-js" */),
   "component---src-pages-for-sale-js": () => import("/Users/nick/vendi/src/pages/for-sale.js" /* webpackChunkName: "component---src-pages-for-sale-js" */),

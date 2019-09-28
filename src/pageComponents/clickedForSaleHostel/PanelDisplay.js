@@ -53,7 +53,7 @@ const PanelDisplay = ({ classes, hostelData }) => {
                 <Grid item xs={8} className={classes.panelInfoGrid}>
                     {panelInfo}
                     <Grid className={classes.contactButtonGrid} container justify="flex-end" >
-                        {/* <ContactBusiness hostelData={hostelData} /> */}
+                        <ContactBusiness hostelData={hostelData} />
                     </Grid>
                 </Grid>
             </Grid>

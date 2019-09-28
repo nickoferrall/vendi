@@ -17,7 +17,7 @@ import styles from './hostelCardStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const HostelCard = ({ classes, hostelData }) => {
-
+    console.log("hostel data from CARD", hostelData)
     const { setClickedHostelData } = useContext(HostelDataContext)
 
     const handleClick = () => {
@@ -30,20 +30,21 @@ const HostelCard = ({ classes, hostelData }) => {
             <Grid item xs={8.5}>
                 <Card className={classes.card} onClick={() => handleClick()}>
                     <CardActionArea>
-                        <Img className={classes.media} fluid={hostelData.image} />
+                        <Img className={classes.media} fluid={hostelData.image[0].fluid} />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                                {hostelData.title}
+                                {hostelData.hostelName}
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {hostelData.body.length < 225 ? hostelData.body :
-                                    `${hostelData.body.substring(0, 225)}...`}
+                                {hostelData.description.description.length < 225 ?
+                                    hostelData.description.description :
+                                    `${hostelData.description.description.substring(0, 225)}...`}
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
                         <Button color="primary" size="small">
-                            Learn More
+                            More Info
                         </Button>
                     </CardActions>
                 </Card>

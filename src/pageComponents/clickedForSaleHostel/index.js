@@ -7,7 +7,6 @@ import PanelDisplay from './PanelDisplay'
 
 const ClickedForSaleHostel = ({ hostelData }) => {
     // const { clickedHostelData } = useContext(HostelDataContext)
-    console.log("hostelData...", hostelData)
     if (hostelData) {
         return (
             <>
