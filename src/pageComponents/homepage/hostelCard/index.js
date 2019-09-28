@@ -18,7 +18,7 @@ const HostelCard = ({ classes, hostelData }) => {
     const description = hostelData.description.description
 
     const handleClick = () => {
-        navigate(`/for-sale/${hostelData.slug}`)
+        navigate(`/${hostelData.slug}`)
     }
 
     return (
