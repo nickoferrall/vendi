@@ -11,7 +11,6 @@ import { withStyles } from '@material-ui/core/styles'
 
 
 const DisplayHostelsContainer = ({ classes, hostelData, subtitle, title }) => {
-    console.log("hostel data from display =>", hostelData)
     return (
         <>
             <Grid container justify="center">

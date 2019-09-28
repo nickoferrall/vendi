@@ -6,7 +6,6 @@ import Headline from '../pageComponents/homepage/headline'
 import Layout from '../components/layout'
 
 const IndexPage = ({ data: { allContentfulAllHostels } }) => {
-  // console.log("data --> index pags", allContentfulAllHostels)
   return (
     <Layout>
       <Headline />

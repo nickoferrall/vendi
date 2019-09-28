@@ -17,7 +17,6 @@ import styles from './hostelCardStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const HostelCard = ({ classes, hostelData }) => {
-    console.log("hostel data from CARD", hostelData)
     const { setClickedHostelData } = useContext(HostelDataContext)
 
     const handleClick = () => {
