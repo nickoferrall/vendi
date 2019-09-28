@@ -4,7 +4,7 @@ import Pagination from 'material-ui-flat-pagination'
 
 import Box from '@material-ui/core/Box'
 
-import styles from './filtered.jss'
+import styles from './filteredStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const FilteredFooter = ({ classes, totalPages, updateQuestionRange }) => {

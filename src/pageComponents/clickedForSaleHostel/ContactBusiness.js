@@ -31,7 +31,7 @@ const ContactBusiness = ({ classes, hostelData }) => {
                 <DialogTitle>Message Owner</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Send an email to the owner of {hostelData.title}
+                        Send an email to the owner of {hostelData.hostelName}
                     </DialogContentText>
                     <TextField
                         autoFocus
@@ -43,7 +43,7 @@ const ContactBusiness = ({ classes, hostelData }) => {
                     />
                     <TextField
                         fullWidth
-                        label={`Write your email to ${hostelData.title}...`}
+                        label={`Write your email to ${hostelData.hostelName}...`}
                         margin="normal"
                         multiline
                         rows="6"

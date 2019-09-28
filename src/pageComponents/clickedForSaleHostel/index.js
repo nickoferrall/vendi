@@ -1,17 +1,14 @@
-import React, { useContext } from 'react'
-
-import { HostelDataContext } from '../../context/HostelDataContext'
+import React from 'react'
 
 import Header from '../../components/Header'
 import PanelDisplay from './PanelDisplay'
 
-const ClickedForSaleHostel = () => {
-    const { clickedHostelData } = useContext(HostelDataContext)
-    if (clickedHostelData) {
+const ClickedForSaleHostel = ({ hostelData }) => {
+    if (hostelData) {
         return (
             <>
-                <Header title={clickedHostelData.title} />
-                <PanelDisplay hostelData={clickedHostelData} />
+                <Header title={hostelData.hostelName} />
+                <PanelDisplay hostelData={hostelData} />
             </>
         )
     }

@@ -27,3 +27,15 @@ export const HostelDataProvider = ({ children }) => {
         </HostelDataContext.Provider>
     );
 };
+
+// import React from 'react';
+
+// const HostelDataContext = () => {
+//     return (
+//         <div>
+//             Hey
+//         </div>
+//     );
+// };
+
+// export default HostelDataContext; 
