@@ -30,11 +30,19 @@ const IndexPage = ({ classes, data: { allContentfulAllHostels } }) => {
             <HostelCard hostelData={hostel.node} /> : null
         })}
       </Grid>
-      {/* <DisplayHostelsContainer
-        hostelData={allContentfulAllHostels.edges}
-        subtitle={"Find hostels that are currently looking for buyers"}
-        title={"For Sale"}
-      /> */}
+
+      <Grid container justify="center">
+        <Box className={classes.boxTitle}>
+          <Typography align="center" className={classes.title} variant="h4" >{"All Hostels"}</Typography>
+          <Typography align="center" variant="h6">{"Browse all hostels in Colombia"}</Typography>
+        </Box>
+      </Grid>
+      <Grid container justify="center">
+        {allContentfulAllHostels.edges.map(hostel => {
+          return hostel.node.forSale ? null :
+            <HostelCard hostelData={hostel.node} />
+        })}
+      </Grid>
     </Layout>
   )
 }
