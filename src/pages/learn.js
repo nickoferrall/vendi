@@ -13,7 +13,7 @@ const Learn = ({ data: { allContentfulBlog } }) => {
   if (allContentfulBlog) {
     return (
       <Layout>
-        <Header title="Learn about running a hostel" />
+        <Header imageHeight={'400px'} title="Learn about running a hostel" />
         <SEO title="Learn" />
         <Grid container justify="center" >
           {allContentfulBlog.edges.map((blog, index) => {
@@ -37,6 +37,7 @@ query blogs {
         createdAt
         cardPreview
         title
+        readingTime
         image {
               fluid(maxWidth: 800) {
                   ...GatsbyContentfulFluid

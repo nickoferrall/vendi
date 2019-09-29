@@ -31,13 +31,13 @@ exports.createPages = async ({ actions, graphql }) => {
     }
     `)
 
-    const hostels = result.data.allContentfulAllHostels.edges
-    hostels.forEach(({ node: hostel }) => {
+    const posts = result.data.allContentfulAllHostels.edges
+    posts.forEach(({ node: post }) => {
         createPage({
-            path: `/${hostel.slug}`,
+            path: `/${post.slug}`,
             component: PostTemplate,
             context: {
-                slug: hostel.slug
+                slug: post.slug
             }
         })
     })

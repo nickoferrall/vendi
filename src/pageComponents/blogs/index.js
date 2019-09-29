@@ -31,18 +31,17 @@ const BlogCard = ({ classes, content }) => {
                             className={classes.img}
                             fluid={content.image[0].fluid}
                         />
-                        <CardContent>
+                        <CardContent className={classes.cardContent}>
                             <Typography gutterBottom variant="h5" component="h2">
                                 {content.title}
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 {content.cardPreview}
-                                {/* {documentToReactComponents(content.body.json)} */}
                             </Typography>
                         </CardContent>
                         <CardActions >
                             <Box className={classes.readingTime} fontWeight="fontWeightLight" >
-                                4 MIN READ
+                                {content.readingTime} MIN READ
                             </Box>
                         </CardActions>
                     </Card>

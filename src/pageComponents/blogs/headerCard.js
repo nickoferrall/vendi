@@ -40,12 +40,12 @@ const HeaderCard = ({ classes, content }) => {
                                 <Typography variant="body2" color="textSecondary" component="p">
                                     {content.cardPreview}
                                 </Typography>
-                                <CardActions >
-                                    <Box className={classes.readingTimeHeader} fontWeight="fontWeightLight" >
-                                        4 MIN READ
-                                </Box>
-                                </CardActions>
                             </CardContent>
+                            <CardActions >
+                                <Box className={classes.readingTimeHeader} fontWeight="fontWeightLight" >
+                                    {content.readingTime} MIN READ
+                                </Box>
+                            </CardActions>
                         </Grid>
                     </Grid>
                 </Card>

@@ -23,7 +23,7 @@ const Learn = ({ classes, data: { contentfulBlog } }) => {
                 <Header imgData={contentfulBlog.image[0].fluid} title={contentfulBlog.title} />
                 <SEO title={contentfulBlog.slug} />
                 <Grid className={classes.container} container justify="center" >
-                    <Grid item xs={7} className={classes.blogItem}>
+                    <Grid item xs={12} md={7} className={classes.blogItem}>
                         <Typography style={{ fontFamily: 'Roboto', fontWeight: '100' }}>
                             {documentToReactComponents(contentfulBlog.body.json)}
                         </Typography>
