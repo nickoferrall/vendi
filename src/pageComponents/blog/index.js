@@ -32,7 +32,7 @@ const BlogCard = ({ classes }) => {
                 <Card
                     className={classes.card}
                     elevation={elevation}
-                    onMouseEnter={() => setElevation(20)}
+                    onMouseEnter={() => setElevation(16)}
                     onMouseLeave={() => setElevation(6)}
                 >
                     <Img

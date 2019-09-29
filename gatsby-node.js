@@ -1,6 +1,7 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+const BlogTemplate = path.resolve('./src/templates/blog.js')
 const PostTemplate = path.resolve('./src/templates/forSale.js')
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -17,13 +18,37 @@ exports.createPages = async ({ actions, graphql }) => {
         }
     }
     `)
-    const posts = result.data.allContentfulAllHostels.edges
-    posts.forEach(({ node: post }) => {
+    const blogResult = await graphql(`
+    {
+        allContentfulBlog {
+        edges {
+            node {
+                id
+                slug
+                }
+            }
+        }
+    }
+    `)
+
+    const hostels = result.data.allContentfulAllHostels.edges
+    hostels.forEach(({ node: hostel }) => {
         createPage({
-            path: `/${post.slug}`,
+            path: `/${hostel.slug}`,
             component: PostTemplate,
             context: {
-                slug: post.slug
+                slug: hostel.slug
+            }
+        })
+    })
+
+    const blogs = blogResult.data.allContentfulBlog.edges
+    blogs.forEach(({ node: blog }) => {
+        createPage({
+            path: `/${blog.slug}`,
+            component: BlogTemplate,
+            context: {
+                slug: blog.slug
             }
         })
     })

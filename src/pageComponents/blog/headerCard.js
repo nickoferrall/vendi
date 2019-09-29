@@ -29,7 +29,7 @@ const HeaderCard = ({ classes }) => {
         <Grid item xs={8.5} >
             <Card className={classes.headerCard}
                 elevation={elevation}
-                onMouseEnter={() => setElevation(20)}
+                onMouseEnter={() => setElevation(16)}
                 onMouseLeave={() => setElevation(6)}
             >
                 <Grid container>

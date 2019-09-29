@@ -8,6 +8,7 @@ const styles = theme => ({
     headerCard: {
         cursor: 'pointer',
         height: theme.spacing(40),
+        marginBottom: theme.spacing(6),
         position: 'relative',
         top: theme.spacing(-5),
         width: theme.spacing(130)
