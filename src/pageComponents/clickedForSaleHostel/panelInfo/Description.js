@@ -15,7 +15,7 @@ const Description = ({ hostelData, classes }) => {
                     {hostelData.hostelName}
                 </Typography>
                 <Typography variant="h6">
-                    ${hostelData.price.toLocaleString()}
+                    ${hostelData.price}
                 </Typography>
                 <Typography variant="body2">
                     {hostelData.address}
