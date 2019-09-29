@@ -7,8 +7,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Grid from '@material-ui/core/Grid'
+import withWidth from '@material-ui/core/withWidth';
 
-const Learn = ({ data: { allContentfulBlog } }) => {
+const Learn = ({ data: { allContentfulBlog }, width }) => {
 
   if (allContentfulBlog) {
     return (
@@ -17,8 +18,8 @@ const Learn = ({ data: { allContentfulBlog } }) => {
         <SEO title="Learn" />
         <Grid container justify="center" >
           {allContentfulBlog.edges.map((blog, index) => {
-            return index === 0 ?
-              <HeaderCard content={blog.node} /> :
+            return index === 0 && width !== 'xs' ?
+              < HeaderCard content={blog.node} /> :
               <Blog content={blog.node} />
           })}
         </Grid>
@@ -53,5 +54,5 @@ query blogs {
 }
 `
 
-export default Learn
+export default withWidth()(Learn)
 

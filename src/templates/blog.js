@@ -5,7 +5,6 @@ import Header from '../components/Header'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Grid from '@material-ui/core/Grid';
