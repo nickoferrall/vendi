@@ -1,10 +1,12 @@
 const styles = theme => ({
     card: {
+        cursor: 'pointer',
         height: theme.spacing(60),
         marginBottom: theme.spacing(8),
         width: theme.spacing(70)
     },
     headerCard: {
+        cursor: 'pointer',
         height: theme.spacing(40),
         position: 'relative',
         top: theme.spacing(-5),

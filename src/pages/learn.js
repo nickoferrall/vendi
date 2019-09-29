@@ -15,7 +15,7 @@ const Learn = ({ classes }) => {
 
     return (
         <Layout>
-            <Header title="FAQs about running a hostel in Colombia" />
+            <Header title="Learn about running a hostel" />
             <SEO title="Learn" />
             <Grid container justify="center">
                 <HeaderCard />
