@@ -16,12 +16,11 @@ const Learn = ({ data: { allContentfulBlog } }) => {
       <Layout>
         <Header title="Learn about running a hostel" />
         <SEO title="Learn" />
-        <Grid container justify="center">
-          <HeaderCard />
-        </Grid>
         <Grid container justify="center" >
-          {allContentfulBlog.edges.map(blog => {
-            return <Blog content={blog.node} />
+          {allContentfulBlog.edges.map((blog, index) => {
+            return index === 0 ?
+              <HeaderCard content={blog.node} /> :
+              <Blog content={blog.node} />
           })}
         </Grid>
       </Layout>

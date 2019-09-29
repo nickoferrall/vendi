@@ -46,7 +46,7 @@ const BlogCard = ({ classes, content }) => {
                     >
                         <Img
                             className={classes.img}
-                            fluid={imgData.homepageImage.childImageSharp.fluid}
+                            fluid={content.image[0].fluid}
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
@@ -54,17 +54,13 @@ const BlogCard = ({ classes, content }) => {
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 {content.cardPreview}
-                                {/* Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica. Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica. Lizards are a widespread. */}
-
                                 {/* {documentToReactComponents(content.body.json)} */}
                             </Typography>
                         </CardContent>
                         <CardActions >
                             <Box className={classes.readingTime} fontWeight="fontWeightLight" >
                                 4 MIN READ
-                        </Box>
+                            </Box>
                         </CardActions>
                     </Card>
                 </Link>

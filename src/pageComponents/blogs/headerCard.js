@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import styles from './blogsStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
-const HeaderCard = ({ classes }) => {
+const HeaderCard = ({ classes, content }) => {
     const [elevation, setElevation] = useState(6)
     const imgData = useStaticQuery(graphql`
     query {
@@ -41,13 +41,10 @@ const HeaderCard = ({ classes }) => {
                     <Grid item xs={4}>
                         <CardContent className={classes.headerCardContent}>
                             <Typography gutterBottom variant="h5" component="h2">
-                                Lizard
+                                {content.title}
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica. Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica. Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica. Lizards are a widespread group of squamate reptiles, with over 6,000 species. Lizards are a widespread
+                                {content.cardPreview}
                             </Typography>
                             <CardActions >
                                 <Box className={classes.readingTimeHeader} fontWeight="fontWeightLight" >
