@@ -17,7 +17,9 @@ const Learn = ({ classes }) => {
         <Layout>
             <Header title="FAQs about running a hostel in Colombia" />
             <SEO title="Learn" />
-            <HeaderCard />
+            <Grid container justify="center">
+                <HeaderCard />
+            </Grid>
             <Grid container justify="center" >
                 {[1, 2, 3, 4, 5].map(val => {
                     return <Blog />
