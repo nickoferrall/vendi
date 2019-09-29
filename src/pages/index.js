@@ -13,7 +13,6 @@ import styles from '../pageComponents/homepage/hostelCard/hostelCardStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const IndexPage = ({ classes, data: { allContentfulAllHostels } }) => {
-  console.log("Index HOME", allContentfulAllHostels)
   return (
     <Layout>
       <Headline />
