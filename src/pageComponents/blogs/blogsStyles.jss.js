@@ -16,6 +16,9 @@ const styles = theme => ({
     headerCardContent: {
         height: '100%'
     },
+    headerImg: {
+        height: theme.spacing(40)
+    },
     img: {
         height: theme.spacing(35)
     },

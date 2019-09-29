@@ -7,40 +7,44 @@ import HeaderCard from '../pageComponents/blogs/headerCard'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import Grid from '@material-ui/core/Grid'
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const Learn = ({ data: { allContentfulBlog } }) => {
-    // console.log("allContentfulBlog", allContentfulBlog ? allContentfulBlog.edges : null)
-    if (allContentfulBlog) {
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
+import styles from '../pageStyles/blogStyles.jss'
+import { withStyles } from '@material-ui/core/styles'
+
+const Learn = ({ classes, data: { contentfulBlog } }) => {
+    console.log("blog contentfulBlog", contentfulBlog ? contentfulBlog : null)
+    if (contentfulBlog) {
         return (
-            <Layout>
-                heyyyy
-                <Header title="Learn about running a hostel" />
-                <SEO title="Learn" />
-                <Grid container justify="center">
-                    <HeaderCard />
+            <>
+                <Layout />
+                <Header title={contentfulBlog.title} />
+                <SEO title={contentfulBlog.slug} />
+                <Grid className={classes.container} container justify="center" >
+                    <Grid item xs={7} className={classes.blogItem}>
+                        <Typography style={{ fontFamily: 'Roboto', fontWeight: '100' }}>
+                            {documentToReactComponents(contentfulBlog.body.json)}
+                        </Typography>
+                    </Grid>
                 </Grid>
-                <Grid container justify="center" >
-                    {allContentfulBlog.edges.map(val => {
-                        return (<Blog />)
-                    })}
-                </Grid>
-            </Layout>
+            </>
         )
     }
 }
 
 export const query = graphql`
-query blog {
-    allContentfulBlog {
-        edges {
-            node {
+query blog($slug: String!) {
+    contentfulBlog(slug: {eq: $slug}) {
                 id
                 slug 
                 createdAt
                 body {
                     id
-                    body
+                    json
                 }
                 title
                 image {
@@ -48,10 +52,8 @@ query blog {
                       ...GatsbyContentfulFluid
               }
           }
-            }
-            }
     }
   }
 `
 
-export default Learn
+export default withStyles(styles)(Learn)

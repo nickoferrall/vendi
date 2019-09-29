@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Img from 'gatsby-image'
 
 import Box from '@material-ui/core/Box';
@@ -17,20 +17,6 @@ import { withStyles } from '@material-ui/core/styles'
 
 const BlogCard = ({ classes, content }) => {
     const [elevation, setElevation] = useState(6)
-
-    console.log("From blog card", content ? content : null)
-
-    const imgData = useStaticQuery(graphql`
-    query {
-      homepageImage: file(relativePath: { eq: "hostel-homepage.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
     return (
         <Grid container justify="center" xs={12} md={6} >
             <Grid item xs={8.5}>

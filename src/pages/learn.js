@@ -10,7 +10,6 @@ import Grid from '@material-ui/core/Grid'
 
 const Learn = ({ data: { allContentfulBlog } }) => {
 
-
   if (allContentfulBlog) {
     return (
       <Layout>
