@@ -9,8 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import styles from './headerStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
-const Header = ({ classes, imageHeight = "300px", title }) => {
-
+const Header = ({ classes, imageHeight = "300px", imgData, title }) => {
   const data = useStaticQuery(graphql`
     query {
       homepageImage: file(relativePath: { eq: "headers/colombia-flag-header.jpg" }) {
@@ -25,7 +24,7 @@ const Header = ({ classes, imageHeight = "300px", title }) => {
 
   return (
     <BackgroundImage
-      fluid={data.homepageImage.childImageSharp.fluid}
+      fluid={imgData ? imgData : data.homepageImage.childImageSharp.fluid}
       style={{ opacity: 0.99 }}
     >
       <Grid container alignItems="center" justify="center" style={{ height: imageHeight }}>
