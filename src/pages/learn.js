@@ -1,12 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 
-import Filter from '../components/Filter'
-import FilteredContainer from '../pageComponents/faq/filtered'
+import Blog from '../pageComponents/blog/index'
 import Header from '../components/Header'
+import HeaderCard from '../pageComponents/blog/headerCard'
 import Layout from "../components/layout"
-import Questions from '../pageComponents/faq/Questions'
 import SEO from "../components/seo"
-import UnfilteredContainer from '../pageComponents/faq/unfiltered'
 
 import Grid from '@material-ui/core/Grid'
 
@@ -14,43 +12,16 @@ import styles from '../pageStyles/learnStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const Learn = ({ classes }) => {
-    const [filteredQuestions, setFilteredQuestions] = useState('')
-    const [userInput, setUserInput] = useState('')
-
-    const filterQuestions = userInput => {
-        setUserInput(userInput)
-        const userInputLower = userInput.toLowerCase()
-        const filtered = Questions.flatMap(section =>
-            section.questions.filter(
-                qAndA =>
-                    qAndA.question.toLowerCase().includes(userInputLower) ||
-                    qAndA.answer.toLowerCase().includes(userInputLower)
-            )
-        )
-        setFilteredQuestions(filtered)
-    }
 
     return (
         <Layout>
-            <Header title="FAQs about running a hostel in Colombia " />
+            <Header title="FAQs about running a hostel in Colombia" />
             <SEO title="Learn" />
-            <Grid container justify="center">
-                <Grid
-                    className={classes.container}
-                    container
-                    justify="center"
-                    xs
-                >
-                    <Filter
-                        filterQuestions={filterQuestions}
-                        setUserInput={setUserInput}
-                    />
-                    {userInput.length === 0 ? (
-                        <UnfilteredContainer />
-                    ) : (
-                            <FilteredContainer filteredQuestions={filteredQuestions} />
-                        )}
-                </Grid>
+            <HeaderCard />
+            <Grid container justify="center" >
+                {[1, 2, 3, 4, 5].map(val => {
+                    return <Blog />
+                })}
             </Grid>
         </Layout>
     )

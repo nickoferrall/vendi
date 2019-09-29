@@ -10,7 +10,7 @@ import styles from './headlineStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const Headline = ({ classes }) => {
-  const data = useStaticQuery(graphql`
+  const imgData = useStaticQuery(graphql`
     query {
       homepageImage: file(relativePath: { eq: "hostel-homepage.jpg" }) {
         childImageSharp {
@@ -24,7 +24,7 @@ const Headline = ({ classes }) => {
 
   return (
     <BackgroundImage
-      fluid={data.homepageImage.childImageSharp.fluid}
+      fluid={imgData.homepageImage.childImageSharp.fluid}
     >
       <Grid container alignItems="center" justify="center" style={{ height: '600px' }}>
         <Grid item className={classes.headlineBox} xs={4}>

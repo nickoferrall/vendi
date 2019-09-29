@@ -4,6 +4,9 @@ const styles = theme => ({
         [theme.breakpoints.down('md')]: {
             padding: '5% 5% 10% 5%'
         }
+    },
+    gridItem: {
+        display: 'flex'
     }
 })
 
