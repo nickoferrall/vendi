@@ -1,9 +1,7 @@
 import React from "react"
 import { graphql } from 'gatsby'
 
-import Blog from '../pageComponents/blogs/index'
 import Header from '../components/Header'
-import HeaderCard from '../pageComponents/blogs/headerCard'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -17,12 +15,12 @@ import styles from '../pageStyles/blogStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const Learn = ({ classes, data: { contentfulBlog } }) => {
-    console.log("blog contentfulBlog", contentfulBlog ? contentfulBlog : null)
+
     if (contentfulBlog) {
         return (
             <>
                 <Layout />
-                <Header title={contentfulBlog.title} />
+                <Header imgData={contentfulBlog.image[0].fluid} title={contentfulBlog.title} />
                 <SEO title={contentfulBlog.slug} />
                 <Grid className={classes.container} container justify="center" >
                     <Grid item xs={7} className={classes.blogItem}>

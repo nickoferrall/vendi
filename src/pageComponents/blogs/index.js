@@ -9,9 +9,6 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
 
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-
 import styles from './blogsStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
