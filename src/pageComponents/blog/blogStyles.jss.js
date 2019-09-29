@@ -8,6 +8,10 @@ const styles = theme => ({
         height: theme.spacing(40),
         position: 'relative',
         top: theme.spacing(-5),
+        width: theme.spacing(130)
+    },
+    headerCardContent: {
+        height: '100%'
     },
     img: {
         height: theme.spacing(35)
@@ -15,6 +19,10 @@ const styles = theme => ({
     readingTime: {
         marginLeft: 'auto',
         marginRight: theme.spacing(2)
+    },
+    readingTimeHeader: {
+        marginLeft: 'auto',
+        marginRight: theme.spacing(2),
     }
 })
 

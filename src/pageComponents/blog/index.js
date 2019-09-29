@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
 
@@ -16,6 +16,8 @@ import styles from './blogStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const BlogCard = ({ classes }) => {
+    const [elevation, setElevation] = useState(6)
+
     const imgData = useStaticQuery(graphql`
     query {
       homepageImage: file(relativePath: { eq: "hostel-homepage.jpg" }) {
@@ -30,7 +32,12 @@ const BlogCard = ({ classes }) => {
     return (
         <Grid container justify="center" xs={12} md={6} >
             <Grid item xs={8.5}>
-                <Card className={classes.card}>
+                <Card
+                    className={classes.card}
+                    elevation={elevation}
+                    onMouseEnter={() => setElevation(20)}
+                    onMouseLeave={() => setElevation(6)}
+                >
                     <CardActionArea>
                         <Img
                             className={classes.img}
@@ -48,7 +55,7 @@ const BlogCard = ({ classes }) => {
                             </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions >
+                    <CardActions elevation={elevation}>
                         <Box className={classes.readingTime} fontWeight="fontWeightLight" >
                             4 MIN READ
                         </Box>
