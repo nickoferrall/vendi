@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -8,6 +10,7 @@ import styles from '../ClickedForSaleHostelStyles.jss'
 import { withStyles } from '@material-ui/core/styles'
 
 const Description = ({ hostelData, classes }) => {
+    console.log("hostelData..", hostelData)
     if (hostelData.hostelName) {
         return (
             <Paper className={classes.paperContainer}>
@@ -15,14 +18,14 @@ const Description = ({ hostelData, classes }) => {
                     {hostelData.hostelName}
                 </Typography>
                 <Typography variant="h6">
-                    ${hostelData.price}
+                    {hostelData.price ? `$${hostelData.price}` : null}
                 </Typography>
                 <Typography variant="body2">
                     {hostelData.address}
                 </Typography>
                 <Box className={classes.box}>
                     <Typography variant="body">
-                        {hostelData.description.description}
+                        {documentToReactComponents(hostelData.longDescription.json)}
                     </Typography>
                 </Box>
             </Paper>

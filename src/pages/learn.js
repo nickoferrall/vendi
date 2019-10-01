@@ -19,7 +19,7 @@ const Learn = ({ data: { allContentfulBlog }, width }) => {
         <Grid container justify="center" >
           {allContentfulBlog.edges.map((blog, index) => {
             return index === 0 && width !== 'xs' ?
-              < HeaderCard content={blog.node} /> :
+              <HeaderCard content={blog.node} /> :
               <Blog content={blog.node} />
           })}
         </Grid>

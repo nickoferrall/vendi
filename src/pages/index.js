@@ -57,6 +57,9 @@ query allHostels {
           city
           country
           price
+          longDescription {
+            json
+          }
           description {
               description
               }

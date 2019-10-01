@@ -34,6 +34,9 @@ query hostels($slug: String!) {
           city
           country
           price
+          longDescription {
+            json
+          }
           description {
               description
               }
