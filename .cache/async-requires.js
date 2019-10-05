@@ -8,6 +8,8 @@ exports.components = {
   "component---src-pages-404-js": () => import("/Users/nick/vendi/src/pages/404.js" /* webpackChunkName: "component---src-pages-404-js" */),
   "component---src-pages-for-sale-js": () => import("/Users/nick/vendi/src/pages/for-sale.js" /* webpackChunkName: "component---src-pages-for-sale-js" */),
   "component---src-pages-index-js": () => import("/Users/nick/vendi/src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
-  "component---src-pages-learn-js": () => import("/Users/nick/vendi/src/pages/learn.js" /* webpackChunkName: "component---src-pages-learn-js" */)
+  "component---src-pages-learn-js": () => import("/Users/nick/vendi/src/pages/learn.js" /* webpackChunkName: "component---src-pages-learn-js" */),
+  "component---src-pages-sign-up-js": () => import("/Users/nick/vendi/src/pages/sign-up.js" /* webpackChunkName: "component---src-pages-sign-up-js" */),
+  "component---src-pages-sign-in-js": () => import("/Users/nick/vendi/src/pages/sign-in.js" /* webpackChunkName: "component---src-pages-sign-in-js" */)
 }
 
