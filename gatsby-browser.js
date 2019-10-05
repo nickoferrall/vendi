@@ -4,13 +4,15 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import React from 'react'
-import { HostelDataProvider } from './src/context/HostelDataContext'
+// import React from 'react'
+// import { HostelDataProvider } from './src/context/HostelDataContext'
 
-export const wrapRootElement = ({ element }) => {
-    return (
-        <HostelDataProvider>
-            {element}
-        </HostelDataProvider>
-    )
-}
+// export const wrapRootElement = ({ element }) => {
+//     return (
+//         <HostelDataProvider>
+//             {element}
+//         </HostelDataProvider>
+//     )
+// }
+
+export { wrapRootElement } from './src/apollo/wrap-root-element';

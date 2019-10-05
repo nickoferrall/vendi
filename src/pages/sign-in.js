@@ -1,5 +1,8 @@
 import React from 'react';
 
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -41,12 +44,28 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const APOLLO_QUERY = gql`
+  {
+    users {
+      id
+      email
+    }
+  }
+`;
+
 export default function SignIn() {
   const classes = useStyles();
 
   return (
     <>
       <Layout />
+      {/* <Query query={APOLLO_QUERY}>
+        {({ data, loading, error }) => {
+          if (loading) return <span>Loading!</span>;
+          if (error) return <p>{error.message}</p>;
+          return <h1>{data.users[0].email}</h1>;
+        }} */}
+      </Query>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>

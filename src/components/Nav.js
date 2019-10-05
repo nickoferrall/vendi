@@ -15,13 +15,13 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   navItemContainer: {
-    marginRight: theme.spacing(15),
+    // marginRight: theme.spacing(15),
     [theme.breakpoints.down('md')]: {
       marginRight: theme.spacing(1)
     }
   },
   navItem: {
-    marginRight: theme.spacing(10)
+    marginRight: theme.spacing(4)
   },
   title: {
     flexGrow: 1
@@ -52,14 +52,18 @@ export default function ButtonAppBar() {
             to={'/learn'}
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
-            <Button color="inherit">Learn</Button>
+            <Button className={classes.navItem} color="inherit">
+              Learn
+            </Button>
           </Link>
           <Link
             activeStyle={{ textDecoration: 'underline' }}
             to={'/sign-in'}
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
-            <Button color="inherit">Login</Button>
+            <Button className={classes.navItem} color="inherit">
+              Account
+            </Button>
           </Link>
         </Box>
       </Toolbar>
