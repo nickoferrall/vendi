@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+// import { useMutation } from 'react-apollo-hooks';
+// import { Query } from 'react-apollo';
+import { useMutation } from '@apollo/react-hooks';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -10,6 +14,7 @@ import Link from '@material-ui/core/Link';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 
+import { CREATE_USER } from '../gql/userQueries';
 import Layout from '../components/layout';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -40,7 +45,37 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function SignUp() {
+  const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [password, setPassword] = useState('');
+
+  // const mutate = useMutation(CREATE_USER);
+  const [createUser, { data }] = useMutation(CREATE_USER);
+  // console.log('MUTATE', createUser, data);
+
+  // console.log('Email...', fullName, email, password);
+
   const classes = useStyles();
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+
+    //   const { data, error } = await mutate({
+    //     variables: {
+    //       name: fullName,
+    //       email,
+    //       password
+    //     }
+    //   });
+    //   console.log('data....', data);
+    createUser({
+      variables: {
+        name: fullName,
+        email,
+        password
+      }
+    });
+  };
 
   return (
     <>
@@ -54,61 +89,52 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   autoComplete="fname"
-                  name="firstName"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
                   autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  required
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
+                  id="fullname"
+                  label="Full Name"
+                  name="fullname"
+                  onChange={event => setFullName(event.target.value)}
+                  required
+                  variant="outlined"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
-                  required
+                  autoComplete="email"
                   fullWidth
                   id="email"
                   label="Email Address"
                   name="email"
-                  autoComplete="email"
+                  onChange={event => setEmail(event.target.value)}
+                  required
+                  variant="outlined"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
-                  required
+                  autoComplete="password"
                   fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
                   id="password"
-                  autoComplete="current-password"
+                  label="Password"
+                  name="password"
+                  onChange={event => setPassword(event.target.value)}
+                  required
+                  variant="outlined"
                 />
               </Grid>
             </Grid>
             <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
               className={classes.submit}
+              color="primary"
+              fullWidth
+              type="submit"
+              variant="contained"
             >
               Sign Up
             </Button>

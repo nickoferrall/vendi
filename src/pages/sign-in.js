@@ -64,8 +64,8 @@ export default function SignIn() {
           if (loading) return <span>Loading!</span>;
           if (error) return <p>{error.message}</p>;
           return <h1>{data.users[0].email}</h1>;
-        }} */}
-      </Query>
+        }}
+      </Query> */}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
