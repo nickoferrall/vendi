@@ -1,13 +1,13 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from 'gatsby-background-image';
 
-import styles from './headlineStyles.jss'
-import { withStyles } from '@material-ui/core/styles'
+import styles from './headlineStyles.jss';
+import { withStyles } from '@material-ui/core/styles';
 
 const Headline = ({ classes }) => {
   const imgData = useStaticQuery(graphql`
@@ -20,19 +20,28 @@ const Headline = ({ classes }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
-    <BackgroundImage
-      fluid={imgData.homepageImage.childImageSharp.fluid}
-    >
-      <Grid container alignItems="center" justify="center" style={{ height: '600px' }}>
+    <BackgroundImage fluid={imgData.homepageImage.childImageSharp.fluid}>
+      <Grid
+        container
+        alignItems="center"
+        justify="center"
+        style={{ height: '600px' }}
+      >
         <Grid item className={classes.headlineBox} xs={4}>
-          <Typography className={classes.headlineText} variant="h2">Buy, sell and learn how to run a hostel</Typography>
+          <Typography
+            align="center"
+            className={classes.headlineText}
+            variant="h2"
+          >
+            Buy, sell and learn how to run a hostel
+          </Typography>
         </Grid>
-      </Grid >
-    </BackgroundImage >
-  )
-}
+      </Grid>
+    </BackgroundImage>
+  );
+};
 
-export default withStyles(styles)(Headline)
+export default withStyles(styles)(Headline);

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-// import { useMutation } from 'react-apollo-hooks';
-// import { Query } from 'react-apollo';
 import { useMutation } from '@apollo/react-hooks';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -49,25 +47,13 @@ export default function SignUp() {
   const [fullName, setFullName] = useState('');
   const [password, setPassword] = useState('');
 
-  // const mutate = useMutation(CREATE_USER);
   const [createUser, { data }] = useMutation(CREATE_USER);
-  // console.log('MUTATE', createUser, data);
-
-  // console.log('Email...', fullName, email, password);
 
   const classes = useStyles();
 
   const handleSubmit = async event => {
     event.preventDefault();
 
-    //   const { data, error } = await mutate({
-    //     variables: {
-    //       name: fullName,
-    //       email,
-    //       password
-    //     }
-    //   });
-    //   console.log('data....', data);
     createUser({
       variables: {
         name: fullName,
@@ -76,6 +62,8 @@ export default function SignUp() {
       }
     });
   };
+
+  console.log('data outside func..', data);
 
   return (
     <>
