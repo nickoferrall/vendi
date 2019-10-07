@@ -56,7 +56,7 @@ export default function ButtonAppBar() {
               Learn
             </Button>
           </Link>
-          <Link
+          {/* <Link
             activeStyle={{ textDecoration: 'underline' }}
             to={'/sign-in'}
             style={{ color: 'inherit', textDecoration: 'inherit' }}
@@ -64,7 +64,7 @@ export default function ButtonAppBar() {
             <Button className={classes.navItem} color="inherit">
               Account
             </Button>
-          </Link>
+          </Link> */}
         </Box>
       </Toolbar>
     </AppBar>
