@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from "gatsby"
+import { Link } from 'gatsby';
 
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
@@ -12,20 +12,20 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   navItemContainer: {
-    marginRight: theme.spacing(15),
+    // marginRight: theme.spacing(15),
     [theme.breakpoints.down('md')]: {
-      marginRight: theme.spacing(1),
+      marginRight: theme.spacing(1)
     }
   },
   navItem: {
-    marginRight: theme.spacing(10),
+    marginRight: theme.spacing(4)
   },
   title: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -37,21 +37,34 @@ export default function ButtonAppBar() {
         <Typography variant="h6" className={classes.title}>
           Vendi
         </Typography>
-        <Box className={classes.navItemContainer} >
+        <Box className={classes.navItemContainer}>
           <Link
             activeStyle={{ textDecoration: 'underline' }}
             to={'/'}
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
-            <Button className={classes.navItem} color="inherit">Buy / Sell</Button>
+            <Button className={classes.navItem} color="inherit">
+              Buy / Sell
+            </Button>
           </Link>
           <Link
             activeStyle={{ textDecoration: 'underline' }}
             to={'/learn'}
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
-            <Button color="inherit">Learn</Button>
+            <Button className={classes.navItem} color="inherit">
+              Learn
+            </Button>
           </Link>
+          {/* <Link
+            activeStyle={{ textDecoration: 'underline' }}
+            to={'/sign-in'}
+            style={{ color: 'inherit', textDecoration: 'inherit' }}
+          >
+            <Button className={classes.navItem} color="inherit">
+              Account
+            </Button>
+          </Link> */}
         </Box>
       </Toolbar>
     </AppBar>
