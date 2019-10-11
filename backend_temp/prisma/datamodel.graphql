@@ -1,0 +1,24 @@
+type User {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  email: String! @unique
+  forSaleHostels: [ForSaleHostel] @relation(name: "UserAdverts")
+  messagesSent: [Message] @relation(name: "SentFromUser")
+  name: String!
+  password: String!
+  updatedAt: DateTime! @updatedAt
+}
+
+type Message {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  hostelSlug: String! @unique
+  sender: User! @relation(name: "SentFromUser")
+  text: String!
+}
+
+type ForSaleHostel {
+  id: ID! @id
+  hostelSlug: String! @unique
+  seller: User @relation(name: "UserAdverts")
+}

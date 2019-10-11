@@ -1,0 +1,1296 @@
+# source: http://localhost:4466
+# timestamp: Sun Oct 06 2019 10:54:21 GMT+0100 (British Summer Time)
+
+type AggregateForSaleHostel {
+  count: Int!
+}
+
+type AggregateMessage {
+  count: Int!
+}
+
+type AggregateUser {
+  count: Int!
+}
+
+type BatchPayload {
+  """The number of nodes that have been affected by the Batch operation."""
+  count: Long!
+}
+
+scalar DateTime
+
+type ForSaleHostel implements Node {
+  id: ID!
+  hostelSlug: String!
+  seller: User
+}
+
+"""A connection to a list of items."""
+type ForSaleHostelConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [ForSaleHostelEdge]!
+  aggregate: AggregateForSaleHostel!
+}
+
+input ForSaleHostelCreateInput {
+  hostelSlug: String!
+  seller: UserCreateOneWithoutForSaleHostelsInput
+}
+
+input ForSaleHostelCreateManyWithoutSellerInput {
+  create: [ForSaleHostelCreateWithoutSellerInput!]
+  connect: [ForSaleHostelWhereUniqueInput!]
+}
+
+input ForSaleHostelCreateWithoutSellerInput {
+  hostelSlug: String!
+}
+
+"""An edge in a connection."""
+type ForSaleHostelEdge {
+  """The item at the end of the edge."""
+  node: ForSaleHostel!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum ForSaleHostelOrderByInput {
+  id_ASC
+  id_DESC
+  hostelSlug_ASC
+  hostelSlug_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type ForSaleHostelPreviousValues {
+  id: ID!
+  hostelSlug: String!
+}
+
+input ForSaleHostelScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [ForSaleHostelScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [ForSaleHostelScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [ForSaleHostelScalarWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  hostelSlug: String
+
+  """All values that are not equal to given value."""
+  hostelSlug_not: String
+
+  """All values that are contained in given list."""
+  hostelSlug_in: [String!]
+
+  """All values that are not contained in given list."""
+  hostelSlug_not_in: [String!]
+
+  """All values less than the given value."""
+  hostelSlug_lt: String
+
+  """All values less than or equal the given value."""
+  hostelSlug_lte: String
+
+  """All values greater than the given value."""
+  hostelSlug_gt: String
+
+  """All values greater than or equal the given value."""
+  hostelSlug_gte: String
+
+  """All values containing the given string."""
+  hostelSlug_contains: String
+
+  """All values not containing the given string."""
+  hostelSlug_not_contains: String
+
+  """All values starting with the given string."""
+  hostelSlug_starts_with: String
+
+  """All values not starting with the given string."""
+  hostelSlug_not_starts_with: String
+
+  """All values ending with the given string."""
+  hostelSlug_ends_with: String
+
+  """All values not ending with the given string."""
+  hostelSlug_not_ends_with: String
+}
+
+type ForSaleHostelSubscriptionPayload {
+  mutation: MutationType!
+  node: ForSaleHostel
+  updatedFields: [String!]
+  previousValues: ForSaleHostelPreviousValues
+}
+
+input ForSaleHostelSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [ForSaleHostelSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [ForSaleHostelSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [ForSaleHostelSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: ForSaleHostelWhereInput
+}
+
+input ForSaleHostelUpdateInput {
+  hostelSlug: String
+  seller: UserUpdateOneWithoutForSaleHostelsInput
+}
+
+input ForSaleHostelUpdateManyDataInput {
+  hostelSlug: String
+}
+
+input ForSaleHostelUpdateManyMutationInput {
+  hostelSlug: String
+}
+
+input ForSaleHostelUpdateManyWithoutSellerInput {
+  create: [ForSaleHostelCreateWithoutSellerInput!]
+  connect: [ForSaleHostelWhereUniqueInput!]
+  set: [ForSaleHostelWhereUniqueInput!]
+  disconnect: [ForSaleHostelWhereUniqueInput!]
+  delete: [ForSaleHostelWhereUniqueInput!]
+  update: [ForSaleHostelUpdateWithWhereUniqueWithoutSellerInput!]
+  updateMany: [ForSaleHostelUpdateManyWithWhereNestedInput!]
+  deleteMany: [ForSaleHostelScalarWhereInput!]
+  upsert: [ForSaleHostelUpsertWithWhereUniqueWithoutSellerInput!]
+}
+
+input ForSaleHostelUpdateManyWithWhereNestedInput {
+  where: ForSaleHostelScalarWhereInput!
+  data: ForSaleHostelUpdateManyDataInput!
+}
+
+input ForSaleHostelUpdateWithoutSellerDataInput {
+  hostelSlug: String
+}
+
+input ForSaleHostelUpdateWithWhereUniqueWithoutSellerInput {
+  where: ForSaleHostelWhereUniqueInput!
+  data: ForSaleHostelUpdateWithoutSellerDataInput!
+}
+
+input ForSaleHostelUpsertWithWhereUniqueWithoutSellerInput {
+  where: ForSaleHostelWhereUniqueInput!
+  update: ForSaleHostelUpdateWithoutSellerDataInput!
+  create: ForSaleHostelCreateWithoutSellerInput!
+}
+
+input ForSaleHostelWhereInput {
+  """Logical AND on all given filters."""
+  AND: [ForSaleHostelWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [ForSaleHostelWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [ForSaleHostelWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  hostelSlug: String
+
+  """All values that are not equal to given value."""
+  hostelSlug_not: String
+
+  """All values that are contained in given list."""
+  hostelSlug_in: [String!]
+
+  """All values that are not contained in given list."""
+  hostelSlug_not_in: [String!]
+
+  """All values less than the given value."""
+  hostelSlug_lt: String
+
+  """All values less than or equal the given value."""
+  hostelSlug_lte: String
+
+  """All values greater than the given value."""
+  hostelSlug_gt: String
+
+  """All values greater than or equal the given value."""
+  hostelSlug_gte: String
+
+  """All values containing the given string."""
+  hostelSlug_contains: String
+
+  """All values not containing the given string."""
+  hostelSlug_not_contains: String
+
+  """All values starting with the given string."""
+  hostelSlug_starts_with: String
+
+  """All values not starting with the given string."""
+  hostelSlug_not_starts_with: String
+
+  """All values ending with the given string."""
+  hostelSlug_ends_with: String
+
+  """All values not ending with the given string."""
+  hostelSlug_not_ends_with: String
+  seller: UserWhereInput
+}
+
+input ForSaleHostelWhereUniqueInput {
+  id: ID
+  hostelSlug: String
+}
+
+"""Raw JSON value"""
+scalar Json
+
+"""
+The `Long` scalar type represents non-fractional signed whole numeric values.
+Long can represent values between -(2^63) and 2^63 - 1.
+"""
+scalar Long
+
+type Message implements Node {
+  id: ID!
+  createdAt: DateTime!
+  hostelSlug: String!
+  sender: User!
+  text: String!
+}
+
+"""A connection to a list of items."""
+type MessageConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [MessageEdge]!
+  aggregate: AggregateMessage!
+}
+
+input MessageCreateInput {
+  hostelSlug: String!
+  text: String!
+  sender: UserCreateOneWithoutMessagesSentInput!
+}
+
+input MessageCreateManyWithoutSenderInput {
+  create: [MessageCreateWithoutSenderInput!]
+  connect: [MessageWhereUniqueInput!]
+}
+
+input MessageCreateWithoutSenderInput {
+  hostelSlug: String!
+  text: String!
+}
+
+"""An edge in a connection."""
+type MessageEdge {
+  """The item at the end of the edge."""
+  node: Message!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum MessageOrderByInput {
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  hostelSlug_ASC
+  hostelSlug_DESC
+  text_ASC
+  text_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type MessagePreviousValues {
+  id: ID!
+  createdAt: DateTime!
+  hostelSlug: String!
+  text: String!
+}
+
+input MessageScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [MessageScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [MessageScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [MessageScalarWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  hostelSlug: String
+
+  """All values that are not equal to given value."""
+  hostelSlug_not: String
+
+  """All values that are contained in given list."""
+  hostelSlug_in: [String!]
+
+  """All values that are not contained in given list."""
+  hostelSlug_not_in: [String!]
+
+  """All values less than the given value."""
+  hostelSlug_lt: String
+
+  """All values less than or equal the given value."""
+  hostelSlug_lte: String
+
+  """All values greater than the given value."""
+  hostelSlug_gt: String
+
+  """All values greater than or equal the given value."""
+  hostelSlug_gte: String
+
+  """All values containing the given string."""
+  hostelSlug_contains: String
+
+  """All values not containing the given string."""
+  hostelSlug_not_contains: String
+
+  """All values starting with the given string."""
+  hostelSlug_starts_with: String
+
+  """All values not starting with the given string."""
+  hostelSlug_not_starts_with: String
+
+  """All values ending with the given string."""
+  hostelSlug_ends_with: String
+
+  """All values not ending with the given string."""
+  hostelSlug_not_ends_with: String
+  text: String
+
+  """All values that are not equal to given value."""
+  text_not: String
+
+  """All values that are contained in given list."""
+  text_in: [String!]
+
+  """All values that are not contained in given list."""
+  text_not_in: [String!]
+
+  """All values less than the given value."""
+  text_lt: String
+
+  """All values less than or equal the given value."""
+  text_lte: String
+
+  """All values greater than the given value."""
+  text_gt: String
+
+  """All values greater than or equal the given value."""
+  text_gte: String
+
+  """All values containing the given string."""
+  text_contains: String
+
+  """All values not containing the given string."""
+  text_not_contains: String
+
+  """All values starting with the given string."""
+  text_starts_with: String
+
+  """All values not starting with the given string."""
+  text_not_starts_with: String
+
+  """All values ending with the given string."""
+  text_ends_with: String
+
+  """All values not ending with the given string."""
+  text_not_ends_with: String
+}
+
+type MessageSubscriptionPayload {
+  mutation: MutationType!
+  node: Message
+  updatedFields: [String!]
+  previousValues: MessagePreviousValues
+}
+
+input MessageSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [MessageSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [MessageSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [MessageSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: MessageWhereInput
+}
+
+input MessageUpdateInput {
+  hostelSlug: String
+  text: String
+  sender: UserUpdateOneRequiredWithoutMessagesSentInput
+}
+
+input MessageUpdateManyDataInput {
+  hostelSlug: String
+  text: String
+}
+
+input MessageUpdateManyMutationInput {
+  hostelSlug: String
+  text: String
+}
+
+input MessageUpdateManyWithoutSenderInput {
+  create: [MessageCreateWithoutSenderInput!]
+  connect: [MessageWhereUniqueInput!]
+  set: [MessageWhereUniqueInput!]
+  disconnect: [MessageWhereUniqueInput!]
+  delete: [MessageWhereUniqueInput!]
+  update: [MessageUpdateWithWhereUniqueWithoutSenderInput!]
+  updateMany: [MessageUpdateManyWithWhereNestedInput!]
+  deleteMany: [MessageScalarWhereInput!]
+  upsert: [MessageUpsertWithWhereUniqueWithoutSenderInput!]
+}
+
+input MessageUpdateManyWithWhereNestedInput {
+  where: MessageScalarWhereInput!
+  data: MessageUpdateManyDataInput!
+}
+
+input MessageUpdateWithoutSenderDataInput {
+  hostelSlug: String
+  text: String
+}
+
+input MessageUpdateWithWhereUniqueWithoutSenderInput {
+  where: MessageWhereUniqueInput!
+  data: MessageUpdateWithoutSenderDataInput!
+}
+
+input MessageUpsertWithWhereUniqueWithoutSenderInput {
+  where: MessageWhereUniqueInput!
+  update: MessageUpdateWithoutSenderDataInput!
+  create: MessageCreateWithoutSenderInput!
+}
+
+input MessageWhereInput {
+  """Logical AND on all given filters."""
+  AND: [MessageWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [MessageWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [MessageWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  hostelSlug: String
+
+  """All values that are not equal to given value."""
+  hostelSlug_not: String
+
+  """All values that are contained in given list."""
+  hostelSlug_in: [String!]
+
+  """All values that are not contained in given list."""
+  hostelSlug_not_in: [String!]
+
+  """All values less than the given value."""
+  hostelSlug_lt: String
+
+  """All values less than or equal the given value."""
+  hostelSlug_lte: String
+
+  """All values greater than the given value."""
+  hostelSlug_gt: String
+
+  """All values greater than or equal the given value."""
+  hostelSlug_gte: String
+
+  """All values containing the given string."""
+  hostelSlug_contains: String
+
+  """All values not containing the given string."""
+  hostelSlug_not_contains: String
+
+  """All values starting with the given string."""
+  hostelSlug_starts_with: String
+
+  """All values not starting with the given string."""
+  hostelSlug_not_starts_with: String
+
+  """All values ending with the given string."""
+  hostelSlug_ends_with: String
+
+  """All values not ending with the given string."""
+  hostelSlug_not_ends_with: String
+  text: String
+
+  """All values that are not equal to given value."""
+  text_not: String
+
+  """All values that are contained in given list."""
+  text_in: [String!]
+
+  """All values that are not contained in given list."""
+  text_not_in: [String!]
+
+  """All values less than the given value."""
+  text_lt: String
+
+  """All values less than or equal the given value."""
+  text_lte: String
+
+  """All values greater than the given value."""
+  text_gt: String
+
+  """All values greater than or equal the given value."""
+  text_gte: String
+
+  """All values containing the given string."""
+  text_contains: String
+
+  """All values not containing the given string."""
+  text_not_contains: String
+
+  """All values starting with the given string."""
+  text_starts_with: String
+
+  """All values not starting with the given string."""
+  text_not_starts_with: String
+
+  """All values ending with the given string."""
+  text_ends_with: String
+
+  """All values not ending with the given string."""
+  text_not_ends_with: String
+  sender: UserWhereInput
+}
+
+input MessageWhereUniqueInput {
+  id: ID
+  hostelSlug: String
+}
+
+type Mutation {
+  createUser(data: UserCreateInput!): User!
+  createMessage(data: MessageCreateInput!): Message!
+  createForSaleHostel(data: ForSaleHostelCreateInput!): ForSaleHostel!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updateMessage(data: MessageUpdateInput!, where: MessageWhereUniqueInput!): Message
+  updateForSaleHostel(data: ForSaleHostelUpdateInput!, where: ForSaleHostelWhereUniqueInput!): ForSaleHostel
+  deleteUser(where: UserWhereUniqueInput!): User
+  deleteMessage(where: MessageWhereUniqueInput!): Message
+  deleteForSaleHostel(where: ForSaleHostelWhereUniqueInput!): ForSaleHostel
+  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  upsertMessage(where: MessageWhereUniqueInput!, create: MessageCreateInput!, update: MessageUpdateInput!): Message!
+  upsertForSaleHostel(where: ForSaleHostelWhereUniqueInput!, create: ForSaleHostelCreateInput!, update: ForSaleHostelUpdateInput!): ForSaleHostel!
+  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  updateManyMessages(data: MessageUpdateManyMutationInput!, where: MessageWhereInput): BatchPayload!
+  updateManyForSaleHostels(data: ForSaleHostelUpdateManyMutationInput!, where: ForSaleHostelWhereInput): BatchPayload!
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+  deleteManyMessages(where: MessageWhereInput): BatchPayload!
+  deleteManyForSaleHostels(where: ForSaleHostelWhereInput): BatchPayload!
+  executeRaw(database: PrismaDatabase, query: String!): Json!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+enum PrismaDatabase {
+  default
+}
+
+type Query {
+  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
+  messages(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message]!
+  forSaleHostels(where: ForSaleHostelWhereInput, orderBy: ForSaleHostelOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ForSaleHostel]!
+  user(where: UserWhereUniqueInput!): User
+  message(where: MessageWhereUniqueInput!): Message
+  forSaleHostel(where: ForSaleHostelWhereUniqueInput!): ForSaleHostel
+  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
+  messagesConnection(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MessageConnection!
+  forSaleHostelsConnection(where: ForSaleHostelWhereInput, orderBy: ForSaleHostelOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ForSaleHostelConnection!
+
+  """Fetches an object given its ID"""
+  node(
+    """The ID of an object"""
+    id: ID!
+  ): Node
+}
+
+type Subscription {
+  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+  message(where: MessageSubscriptionWhereInput): MessageSubscriptionPayload
+  forSaleHostel(where: ForSaleHostelSubscriptionWhereInput): ForSaleHostelSubscriptionPayload
+}
+
+type User implements Node {
+  id: ID!
+  createdAt: DateTime!
+  email: String!
+  forSaleHostels(where: ForSaleHostelWhereInput, orderBy: ForSaleHostelOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ForSaleHostel!]
+  messagesSent(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message!]
+  name: String!
+  password: String!
+  updatedAt: DateTime!
+}
+
+"""A connection to a list of items."""
+type UserConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [UserEdge]!
+  aggregate: AggregateUser!
+}
+
+input UserCreateInput {
+  email: String!
+  name: String!
+  password: String!
+  forSaleHostels: ForSaleHostelCreateManyWithoutSellerInput
+  messagesSent: MessageCreateManyWithoutSenderInput
+}
+
+input UserCreateOneWithoutForSaleHostelsInput {
+  create: UserCreateWithoutForSaleHostelsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateOneWithoutMessagesSentInput {
+  create: UserCreateWithoutMessagesSentInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutForSaleHostelsInput {
+  email: String!
+  name: String!
+  password: String!
+  messagesSent: MessageCreateManyWithoutSenderInput
+}
+
+input UserCreateWithoutMessagesSentInput {
+  email: String!
+  name: String!
+  password: String!
+  forSaleHostels: ForSaleHostelCreateManyWithoutSellerInput
+}
+
+"""An edge in a connection."""
+type UserEdge {
+  """The item at the end of the edge."""
+  node: User!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum UserOrderByInput {
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  email_ASC
+  email_DESC
+  name_ASC
+  name_DESC
+  password_ASC
+  password_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type UserPreviousValues {
+  id: ID!
+  createdAt: DateTime!
+  email: String!
+  name: String!
+  password: String!
+  updatedAt: DateTime!
+}
+
+type UserSubscriptionPayload {
+  mutation: MutationType!
+  node: User
+  updatedFields: [String!]
+  previousValues: UserPreviousValues
+}
+
+input UserSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [UserSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [UserSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [UserSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: UserWhereInput
+}
+
+input UserUpdateInput {
+  email: String
+  name: String
+  password: String
+  forSaleHostels: ForSaleHostelUpdateManyWithoutSellerInput
+  messagesSent: MessageUpdateManyWithoutSenderInput
+}
+
+input UserUpdateManyMutationInput {
+  email: String
+  name: String
+  password: String
+}
+
+input UserUpdateOneRequiredWithoutMessagesSentInput {
+  create: UserCreateWithoutMessagesSentInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateWithoutMessagesSentDataInput
+  upsert: UserUpsertWithoutMessagesSentInput
+}
+
+input UserUpdateOneWithoutForSaleHostelsInput {
+  create: UserCreateWithoutForSaleHostelsInput
+  connect: UserWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: UserUpdateWithoutForSaleHostelsDataInput
+  upsert: UserUpsertWithoutForSaleHostelsInput
+}
+
+input UserUpdateWithoutForSaleHostelsDataInput {
+  email: String
+  name: String
+  password: String
+  messagesSent: MessageUpdateManyWithoutSenderInput
+}
+
+input UserUpdateWithoutMessagesSentDataInput {
+  email: String
+  name: String
+  password: String
+  forSaleHostels: ForSaleHostelUpdateManyWithoutSellerInput
+}
+
+input UserUpsertWithoutForSaleHostelsInput {
+  update: UserUpdateWithoutForSaleHostelsDataInput!
+  create: UserCreateWithoutForSaleHostelsInput!
+}
+
+input UserUpsertWithoutMessagesSentInput {
+  update: UserUpdateWithoutMessagesSentDataInput!
+  create: UserCreateWithoutMessagesSentInput!
+}
+
+input UserWhereInput {
+  """Logical AND on all given filters."""
+  AND: [UserWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [UserWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [UserWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  email: String
+
+  """All values that are not equal to given value."""
+  email_not: String
+
+  """All values that are contained in given list."""
+  email_in: [String!]
+
+  """All values that are not contained in given list."""
+  email_not_in: [String!]
+
+  """All values less than the given value."""
+  email_lt: String
+
+  """All values less than or equal the given value."""
+  email_lte: String
+
+  """All values greater than the given value."""
+  email_gt: String
+
+  """All values greater than or equal the given value."""
+  email_gte: String
+
+  """All values containing the given string."""
+  email_contains: String
+
+  """All values not containing the given string."""
+  email_not_contains: String
+
+  """All values starting with the given string."""
+  email_starts_with: String
+
+  """All values not starting with the given string."""
+  email_not_starts_with: String
+
+  """All values ending with the given string."""
+  email_ends_with: String
+
+  """All values not ending with the given string."""
+  email_not_ends_with: String
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+  password: String
+
+  """All values that are not equal to given value."""
+  password_not: String
+
+  """All values that are contained in given list."""
+  password_in: [String!]
+
+  """All values that are not contained in given list."""
+  password_not_in: [String!]
+
+  """All values less than the given value."""
+  password_lt: String
+
+  """All values less than or equal the given value."""
+  password_lte: String
+
+  """All values greater than the given value."""
+  password_gt: String
+
+  """All values greater than or equal the given value."""
+  password_gte: String
+
+  """All values containing the given string."""
+  password_contains: String
+
+  """All values not containing the given string."""
+  password_not_contains: String
+
+  """All values starting with the given string."""
+  password_starts_with: String
+
+  """All values not starting with the given string."""
+  password_not_starts_with: String
+
+  """All values ending with the given string."""
+  password_ends_with: String
+
+  """All values not ending with the given string."""
+  password_not_ends_with: String
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
+  forSaleHostels_every: ForSaleHostelWhereInput
+  forSaleHostels_some: ForSaleHostelWhereInput
+  forSaleHostels_none: ForSaleHostelWhereInput
+  messagesSent_every: MessageWhereInput
+  messagesSent_some: MessageWhereInput
+  messagesSent_none: MessageWhereInput
+}
+
+input UserWhereUniqueInput {
+  id: ID
+  email: String
+}
