@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import gql from 'graphql-tag';
+import { useMutation } from '@apollo/react-hooks';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -14,6 +14,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
+import { LOGIN } from '../gql/userMutations';
 import Layout from '../components/layout';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -43,28 +44,33 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const APOLLO_QUERY = gql`
-  {
-    users {
-      id
-      email
-    }
-  }
-`;
-
 export default function SignIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const classes = useStyles();
+
+  const [login, { data }] = useMutation(LOGIN);
+  console.log('TCL: SignIn -> data', data);
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    try {
+      const test = await login({
+        variables: {
+          email,
+          password
+        }
+      });
+      console.log('TCL: try -> test', test);
+    } catch (error) {
+      console.log('TCL: catch-> error', error);
+    }
+  };
 
   return (
     <>
       <Layout />
-      {/* <Query query={APOLLO_QUERY}>
-        {({ data, loading, error }) => {
-          if (loading) return <span>Loading!</span>;
-          if (error) return <p>{error.message}</p>;
-          return <h1>{data.users[0].email}</h1>;
-        }}
-      </Query> */}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -74,7 +80,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -83,6 +89,7 @@ export default function SignIn() {
               id="email"
               label="Email Address"
               name="email"
+              onChange={event => setEmail(event.target.value)}
               autoComplete="email"
               autoFocus
             />
@@ -94,6 +101,7 @@ export default function SignIn() {
               name="password"
               label="Password"
               type="password"
+              onChange={event => setPassword(event.target.value)}
               id="password"
               autoComplete="current-password"
             />

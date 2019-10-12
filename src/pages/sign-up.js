@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
+// import { useMutation } from 'react-apollo-hooks';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -12,7 +13,7 @@ import Link from '@material-ui/core/Link';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 
-import { CREATE_USER } from '../gql/userQueries';
+import { CREATE_USER } from '../gql/userMutations';
 import Layout from '../components/layout';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -53,7 +54,6 @@ export default function SignUp() {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    console.log('data:', fullName, email, password);
     createUser({
       variables: {
         name: fullName,

@@ -45,4 +45,4 @@ const LOGIN = gql`
 //   }
 // `;
 
-export { CREATE_USER };
+export { CREATE_USER, LOGIN };
