@@ -25,7 +25,17 @@ const LOGIN = gql`
   }
 `;
 
-// const GET_MY_INFO = gql`
+const TEST = gql`
+  query {
+    users {
+      name
+      email
+      password
+    }
+  }
+`;
+
+// const GET_MY_INFO = gql`;
 //   query {
 //     me {
 //       id
@@ -45,4 +55,4 @@ const LOGIN = gql`
 //   }
 // `;
 
-export { CREATE_USER, LOGIN };
+export { CREATE_USER, LOGIN, TEST };

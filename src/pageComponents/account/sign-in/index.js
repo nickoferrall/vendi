@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link, navigate } from 'gatsby';
-import { useMutation } from '@apollo/react-hooks';
+// import { useMutation } from '@apollo/react-hooks';
+import { useQuery } from 'react-apollo-hooks';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -12,43 +13,45 @@ import LockIcon from '@material-ui/icons/Lock';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-import { LOGIN } from '../../../gql/userMutations';
+import { TEST } from '../../../gql/userMutations';
 
 import styles from '../accountStyles.jss';
 import { withStyles } from '@material-ui/core/styles';
 
 const SignIn = ({ classes }) => {
   const [email, setEmail] = useState('');
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
   const [password, setPassword] = useState('');
 
-  const [login, { data }] = useMutation(LOGIN);
+  const { data, error, loading } = useQuery(TEST);
+
+  // const [login, { data }] = useMutation(LOGIN);
   console.log('TCL: SignIn -> data', data);
 
-  const handleSubmit = async event => {
-    console.log('In handle submit');
-    event.preventDefault();
-    try {
-      await login({
-        variables: {
-          email,
-          password
-        }
-      });
-    } catch (err) {
-      if (err) {
-        setError(true);
-      }
-    }
-  };
+  // const handleSubmit = async event => {
+  //   console.log('In handle submit');
+  //   event.preventDefault();
+  //   try {
+  //     await login({
+  //       variables: {
+  //         email,
+  //         password
+  //       }
+  //     });
+  //   } catch (err) {
+  //     if (err) {
+  //       setError(true);
+  //     }
+  //   }
+  // };
 
-  useEffect(() => {
-    if (data) {
-      console.log('TCL: Useffect -> data', data);
-      // localStorage.setItem('jwt', data.login.token);
-      // navigate('/');
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     console.log('TCL: Useffect -> data', data);
+  //     // localStorage.setItem('jwt', data.login.token);
+  //     // navigate('/');
+  //   }
+  // }, [data]);
 
   return (
     <>
@@ -65,8 +68,8 @@ const SignIn = ({ classes }) => {
           <Typography component="h1" variant="h5" className={classes.header}>
             Sign in
           </Typography>
-          <form noValidate onSubmit={handleSubmit}>
-            {/* <form noValidate> */}
+          {/* <form noValidate onSubmit={handleSubmit}> */}
+          <form noValidate>
             <TextField
               autoComplete="email"
               autoFocus
