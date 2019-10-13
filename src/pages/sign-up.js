@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { navigate } from 'gatsby';
-import { onError } from 'apollo-link-error';
+// import { onError } from 'apollo-link-error';
 import { useMutation } from '@apollo/react-hooks';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SignUp() {
+const SignUp = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
   const [fullName, setFullName] = useState('');
@@ -187,4 +187,6 @@ export default function SignUp() {
       </Container>
     </>
   );
-}
+};
+
+export default SignUp;

@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SignIn() {
+const SignIn = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
   const [password, setPassword] = useState('');
@@ -75,7 +75,6 @@ export default function SignIn() {
 
   useEffect(() => {
     if (data) {
-      console.log('What is data!', data.login.token);
       localStorage.setItem('jwt', data.login.token);
       navigate('/');
     }
@@ -153,4 +152,6 @@ export default function SignIn() {
       </Container>
     </>
   );
-}
+};
+
+export default SignIn;
