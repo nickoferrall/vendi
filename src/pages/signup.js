@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { navigate } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 // import { onError } from 'apollo-link-error';
 import { useMutation } from '@apollo/react-hooks';
 
@@ -10,7 +10,6 @@ import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 
@@ -176,9 +175,7 @@ const SignUp = () => {
             </Button>
             <Grid container justify="flex-end">
               <Grid item>
-                <Link href="/sign-in" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+                <Link to={'/login'}> Already have an account? Sign in</Link>
               </Grid>
             </Grid>
           </form>
