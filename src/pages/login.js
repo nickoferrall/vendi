@@ -43,8 +43,8 @@ const SignIn = ({ classes }) => {
 
   useEffect(() => {
     if (data) {
-      localStorage.setItem('jwt', data.login.token);
-      navigate('/');
+      // localStorage.setItem('jwt', data.login.token);
+      // navigate('/');
     }
   }, [data]);
 
