@@ -7,7 +7,7 @@ const CREATE_USER = gql`
         name
         email
       }
-      # token
+      token
     }
   }
 `;

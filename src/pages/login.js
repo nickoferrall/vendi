@@ -14,8 +14,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
-import { LOGIN } from '../gql/userMutations';
 import Layout from '../components/layout';
+import { LOGIN } from '../gql/userMutations';
 
 import { makeStyles } from '@material-ui/core/styles';
 

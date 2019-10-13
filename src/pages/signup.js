@@ -18,7 +18,6 @@ import Layout from '../components/layout';
 import Snackbar from '../components/snackbar/index';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { setTimeout } from 'optimism';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -66,7 +65,7 @@ const SignUp = () => {
   const handleSubmit = async event => {
     event.preventDefault();
 
-    if (password.length <= 8) {
+    if (password.length < 8) {
       setShortPassword(true);
     }
 
@@ -95,6 +94,7 @@ const SignUp = () => {
 
   useEffect(() => {
     if (data) {
+      localStorage.setItem('jwt', data.createUser.token);
       setOpen(true);
       setTimeout(() => {
         navigate('/');
