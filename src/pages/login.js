@@ -42,7 +42,6 @@ const SignIn = ({ classes }) => {
   };
 
   useEffect(() => {
-    console.log('TCL: SignIn -> data', data);
     if (data) {
       localStorage.setItem('jwt', data.login.token);
       navigate('/');

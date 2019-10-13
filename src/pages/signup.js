@@ -1,10 +1,10 @@
 import React from 'react';
 
-const signup = () => {
-  return <div>Heyy!</div>;
+const Signup = () => {
+  return <div>Heyy</div>;
 };
 
-export default signup;
+export default Signup;
 
 // import React, { useEffect, useState } from 'react';
 
