@@ -23,8 +23,10 @@ const SignIn = ({ classes }) => {
   const [password, setPassword] = useState('');
 
   const [login, { data }] = useMutation(LOGIN);
+  console.log('TCL: SignIn -> data', data);
 
   const handleSubmit = async event => {
+    console.log('In handle submit');
     event.preventDefault();
     try {
       await login({
@@ -42,6 +44,7 @@ const SignIn = ({ classes }) => {
 
   useEffect(() => {
     if (data) {
+      console.log('TCL: Useffect -> data', data);
       localStorage.setItem('jwt', data.login.token);
       navigate('/');
     }
