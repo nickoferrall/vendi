@@ -12,7 +12,7 @@ import LockIcon from '@material-ui/icons/Lock';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-import { LOGIN } from '../../../gql/userMutations';
+// import { LOGIN } from '../../../gql/userMutations';
 
 import styles from '../accountStyles.jss';
 import { withStyles } from '@material-ui/core/styles';
@@ -22,30 +22,30 @@ const SignIn = ({ classes }) => {
   const [error, setError] = useState(false);
   const [password, setPassword] = useState('');
 
-  const [login, { data }] = useMutation(LOGIN);
+  //   const [login, { data }] = useMutation(LOGIN);
 
-  const handleSubmit = async event => {
-    event.preventDefault();
-    try {
-      await login({
-        variables: {
-          email,
-          password
-        }
-      });
-    } catch (err) {
-      if (err) {
-        setError(true);
-      }
-    }
-  };
+  //   const handleSubmit = async event => {
+  //     event.preventDefault();
+  //     try {
+  //       await login({
+  //         variables: {
+  //           email,
+  //           password
+  //         }
+  //       });
+  //     } catch (err) {
+  //       if (err) {
+  //         setError(true);
+  //       }
+  //     }
+  //   };
 
-  useEffect(() => {
-    if (data) {
-      // localStorage.setItem('jwt', data.login.token);
-      // navigate('/');
-    }
-  }, [data]);
+  //   useEffect(() => {
+  //     if (data) {
+  //       // localStorage.setItem('jwt', data.login.token);
+  //       // navigate('/');
+  //     }
+  //   }, [data]);
 
   return (
     <>
@@ -62,7 +62,8 @@ const SignIn = ({ classes }) => {
           <Typography component="h1" variant="h5" className={classes.header}>
             Sign in
           </Typography>
-          <form noValidate onSubmit={handleSubmit}>
+          {/* <form noValidate onSubmit={handleSubmit}> */}
+          <form noValidate>
             <TextField
               autoComplete="email"
               autoFocus
