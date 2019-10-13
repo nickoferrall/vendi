@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+import { navigate } from 'gatsby';
+import { onError } from 'apollo-link-error';
 import { useMutation } from '@apollo/react-hooks';
-// import { useMutation } from 'react-apollo-hooks';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -15,8 +16,10 @@ import Typography from '@material-ui/core/Typography';
 
 import { CREATE_USER } from '../gql/userMutations';
 import Layout from '../components/layout';
+import Snackbar from '../components/snackbar/index';
 
 import { makeStyles } from '@material-ui/core/styles';
+import { setTimeout } from 'optimism';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -29,6 +32,10 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
+  },
+  errorMessage: {
+    color: '#d32f2f',
+    marginTop: theme.spacing(2)
   },
   avatar: {
     margin: theme.spacing(1),
@@ -45,25 +52,56 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(false);
   const [fullName, setFullName] = useState('');
+  const [open, setOpen] = useState(false);
   const [password, setPassword] = useState('');
+  const [shortPassword, setShortPassword] = useState(false);
 
   const [createUser, { data }] = useMutation(CREATE_USER);
+
+  const delay = 1000;
 
   const classes = useStyles();
 
   const handleSubmit = async event => {
     event.preventDefault();
-    createUser({
-      variables: {
-        name: fullName,
-        email,
-        password
-      }
-    });
+
+    if (password.length <= 8) {
+      setShortPassword(true);
+    }
+
+    try {
+      createUser({
+        variables: {
+          name: fullName,
+          email,
+          password
+        }
+      });
+    } catch (err) {
+      // onError(({ graphQLErrors, networkError }) => {
+      //   if (graphQLErrors)
+      //     graphQLErrors.map(({ message, locations, path }) =>
+      //       console.log(
+      //         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+      //       )
+      //     );
+
+      //   if (networkError) console.log(`[Network error]: ${networkError}`);
+      // });
+      setError(true);
+    }
   };
 
-  console.log('data outside func..', data);
+  useEffect(() => {
+    if (data) {
+      setOpen(true);
+      setTimeout(() => {
+        navigate('/');
+      }, delay);
+    }
+  }, [data]);
 
   return (
     <>
@@ -117,6 +155,16 @@ export default function SignUp() {
                 />
               </Grid>
             </Grid>
+            {shortPassword ? (
+              <Typography className={classes.errorMessage}>
+                Password must be at least 8 characters.
+              </Typography>
+            ) : null}
+            {error ? (
+              <Typography className={classes.errorMessage}>
+                Unable to sign-up. Your email address may already be registered.
+              </Typography>
+            ) : null}
             <Button
               className={classes.submit}
               color="primary"
@@ -135,6 +183,7 @@ export default function SignUp() {
             </Grid>
           </form>
         </div>
+        <Snackbar open={open} setOpen={setOpen} text={'Signed Up!'} />
       </Container>
     </>
   );
