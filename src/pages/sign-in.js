@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+import { navigate } from 'gatsby';
 import { useMutation } from '@apollo/react-hooks';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -35,6 +36,9 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main
   },
+  errorMessage: {
+    color: '#d32f2f'
+  },
   form: {
     width: '100%',
     marginTop: theme.spacing(1)
@@ -46,27 +50,36 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(false);
   const [password, setPassword] = useState('');
 
   const classes = useStyles();
 
   const [login, { data }] = useMutation(LOGIN);
-  console.log('TCL: SignIn -> data', data);
 
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      const test = await login({
+      await login({
         variables: {
           email,
           password
         }
       });
-      console.log('TCL: try -> test', test);
-    } catch (error) {
-      console.log('TCL: catch-> error', error);
+    } catch (err) {
+      if (err) {
+        setError(true);
+      }
     }
   };
+
+  useEffect(() => {
+    if (data) {
+      console.log('What is data!', data.login.token);
+      localStorage.setItem('jwt', data.login.token);
+      navigate('/');
+    }
+  }, [data]);
 
   return (
     <>
@@ -109,6 +122,11 @@ export default function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            {error ? (
+              <Typography className={classes.errorMessage}>
+                Unable to login. Try again.
+              </Typography>
+            ) : null}
             <Button
               type="submit"
               fullWidth
