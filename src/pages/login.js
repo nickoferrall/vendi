@@ -117,6 +117,7 @@ const Login = () => {
               <Grid item xs={12}>
                 <TextField
                   autoComplete="email"
+                  autoFocus
                   fullWidth
                   id="email"
                   label="Email Address"

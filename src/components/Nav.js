@@ -15,13 +15,15 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   navItemContainer: {
-    // marginRight: theme.spacing(15),
     [theme.breakpoints.down('md')]: {
       marginRight: theme.spacing(1)
     }
   },
   navItem: {
-    marginRight: theme.spacing(4)
+    marginRight: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      margin: 0
+    }
   },
   title: {
     flexGrow: 1
