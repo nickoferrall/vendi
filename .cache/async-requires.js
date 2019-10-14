@@ -10,6 +10,6 @@ exports.components = {
   "component---src-pages-index-js": () => import("/Users/nick/vendi/src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-learn-js": () => import("/Users/nick/vendi/src/pages/learn.js" /* webpackChunkName: "component---src-pages-learn-js" */),
   "component---src-pages-login-js": () => import("/Users/nick/vendi/src/pages/login.js" /* webpackChunkName: "component---src-pages-login-js" */),
-  "component---src-pages-signup-js": () => import("/Users/nick/vendi/src/pages/signup.js" /* webpackChunkName: "component---src-pages-signup-js" */)
+  "component---src-pages-sign-up-js": () => import("/Users/nick/vendi/src/pages/sign-up.js" /* webpackChunkName: "component---src-pages-sign-up-js" */)
 }
 

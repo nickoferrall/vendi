@@ -13,6 +13,6 @@ exports.components = {
   "component---src-pages-index-js": hot(preferDefault(require("/Users/nick/vendi/src/pages/index.js"))),
   "component---src-pages-learn-js": hot(preferDefault(require("/Users/nick/vendi/src/pages/learn.js"))),
   "component---src-pages-login-js": hot(preferDefault(require("/Users/nick/vendi/src/pages/login.js"))),
-  "component---src-pages-signup-js": hot(preferDefault(require("/Users/nick/vendi/src/pages/signup.js")))
+  "component---src-pages-sign-up-js": hot(preferDefault(require("/Users/nick/vendi/src/pages/sign-up.js")))
 }
 
