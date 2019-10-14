@@ -13,6 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
 import { LOGIN } from '../gql/userMutations';
+import Snackbar from '../components/snackbar/index';
 
 import styles from '../pageStyles/registerStyles.jss';
 import { withStyles } from '@material-ui/core/styles';
@@ -20,7 +21,10 @@ import { withStyles } from '@material-ui/core/styles';
 const SignIn = ({ classes }) => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
+  const [open, setOpen] = useState(false);
   const [password, setPassword] = useState('');
+
+  const delay = 1000;
 
   const [login, { data }] = useMutation(LOGIN);
 
@@ -44,7 +48,10 @@ const SignIn = ({ classes }) => {
     if (data) {
       console.log('TCL: SignIn -> data', data);
       localStorage.setItem('jwt', data.login.token);
-      navigate('/');
+      setOpen(true);
+      setTimeout(() => {
+        navigate('/');
+      }, delay);
     }
   }, [data]);
 
@@ -125,6 +132,7 @@ const SignIn = ({ classes }) => {
           </form>
         </Grid>
       </Grid>
+      <Snackbar open={open} setOpen={setOpen} text={'Success'} />
     </>
   );
 };
